@@ -33,10 +33,26 @@ class MainActivity2 : AppCompatActivity() {
         views.forEachIndexed { index, view ->
             view.setOnClickListener {
 
-                val card = cards[index]
-                card.isFaceUp = !card.isFaceUp
-                view.setImageResource(if (card.isFaceUp) images[index] else R.drawable.kart2x2)
+                // modelleri güncelleme
+                updateModels(index)
+
+                // UI güncelleme
+                updateViews()
+
             }
         }
+    }
+
+    private fun updateViews() {
+        cards.forEachIndexed { index, card ->
+
+            val view = views[index]
+            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart2x2)
+        }
+    }
+
+    private fun updateModels(position: Int) {
+        val card = cards[position]
+        card.isFaceUp = !card.isFaceUp
     }
 }

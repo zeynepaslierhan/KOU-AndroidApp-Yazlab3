@@ -3,9 +3,9 @@ package com.zeynepaslierhan.memorygame
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class MainActivity5 : AppCompatActivity() {
+class oyun_zorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main5)
+        setContentView(R.layout.activity_oyun_zor)
     }
 }

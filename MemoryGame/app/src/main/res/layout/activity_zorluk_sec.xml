@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".MainActivity6">
+    tools:context=".zorluk_secActivity">
 
     <Button
         android:id="@+id/button_basit3"

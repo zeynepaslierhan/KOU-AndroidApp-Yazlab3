@@ -1,7 +1,6 @@
 package com.zeynepaslierhan.memorygame
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_oyun_basit.*
@@ -33,17 +32,10 @@ class MainActivity2 : AppCompatActivity() {
 
         views.forEachIndexed { index, view ->
             view.setOnClickListener {
-                Log.i(TAG, "View Clicked!")
+
                 val card = cards[index]
                 card.isFaceUp = !card.isFaceUp
-                if (card.isFaceUp)
-                {
-                    view.setImageResource(images[index])
-                }
-                else {
-                    view.setImageResource(R.drawable.kart2x2)
-                }
-
+                view.setImageResource(if (card.isFaceUp) images[index] else R.drawable.kart2x2)
             }
         }
     }

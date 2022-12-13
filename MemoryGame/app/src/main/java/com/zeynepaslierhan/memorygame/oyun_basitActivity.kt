@@ -11,6 +11,7 @@ private const val TAG = "Basit Oyun Activity"
 class MainActivity2 : AppCompatActivity() {
 
     private lateinit var views: List<ImageView>
+    private lateinit var cards: List<MemoryCard>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,10 +27,23 @@ class MainActivity2 : AppCompatActivity() {
 
         views = listOf(kart_2_1, kart_2_2, kart_2_3, kart_2_4)
 
+        cards = views.indices.map { index ->
+            MemoryCard(images[index])
+        }
+
         views.forEachIndexed { index, view ->
             view.setOnClickListener {
                 Log.i(TAG, "View Clicked!")
-                view.setImageResource(images[index])
+                val card = cards[index]
+                card.isFaceUp = !card.isFaceUp
+                if (card.isFaceUp)
+                {
+                    view.setImageResource(images[index])
+                }
+                else {
+                    view.setImageResource(R.drawable.kart2x2)
+                }
+
             }
         }
     }

@@ -4,119 +4,376 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity4">
+    android:background="#000000"
+    tools:context=".MainActivity4"
+    tools:layout_editor_absoluteX="-7dp"
+    tools:layout_editor_absoluteY="0dp">
 
     <ImageView
-        android:id="@+id/kart_6_9"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_6"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_6"
+        android:id="@+id/kart_6_6"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kart_6_5"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/kart" />
 
     <ImageView
-        android:id="@+id/kart_6_11"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/kart_6_9"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_3"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_3"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_3"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_14"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_8"
         app:layout_constraintStart_toStartOf="@+id/kart_6_8"
         app:layout_constraintTop_toBottomOf="@+id/kart_6_8"
         app:srcCompat="@drawable/kart" />
 
     <ImageView
-        android:id="@+id/kart_6_10"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_7"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_7"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_7"
+        android:id="@+id/kart_6_30"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kart_6_29"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_24"
         app:srcCompat="@drawable/kart" />
 
     <ImageView
-        android:id="@+id/kart_6_6"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_3"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_3"
+        android:id="@+id/kart_6_27"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_21"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_21"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_21"
         app:srcCompat="@drawable/kart" />
 
     <ImageView
-        android:id="@+id/kart_6_8"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/kart_6_3"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toEndOf="@+id/kart_6_2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_11"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_5"
         app:layout_constraintStart_toStartOf="@+id/kart_6_5"
         app:layout_constraintTop_toBottomOf="@+id/kart_6_5"
         app:srcCompat="@drawable/kart" />
 
     <ImageView
-        android:id="@+id/kart_6_7"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/kart_6_20"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_14"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_14"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_14"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_24"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kart_6_23"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_18"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_10"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/kart_6_4"
         app:layout_constraintStart_toStartOf="@+id/kart_6_4"
         app:layout_constraintTop_toBottomOf="@+id/kart_6_4"
         app:srcCompat="@drawable/kart" />
 
     <ImageView
-        android:id="@+id/kart_6_3"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/kart_6_22"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_16"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_16"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_16"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_13"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_7"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_7"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_16"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_10"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_10"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_10"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_15"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_9"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_9"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_9"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_18"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kart_6_17"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_12"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_25"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_19"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_19"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_19"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_13"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_13"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_12"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kart_6_11"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_6"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_26"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_20"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_20"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_20"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_29"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_23"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_23"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_23"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_8"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/kart_6_2"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_2"
         app:layout_constraintTop_toBottomOf="@+id/kart_6_2"
         app:srcCompat="@drawable/kart" />
 
     <ImageView
-        android:id="@+id/kart_6_5"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_0"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_0"
+        android:id="@+id/kart_6_2"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toEndOf="@+id/kart_6_1"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/kart" />
 
     <ImageView
-        android:id="@+id/kart_6_4"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_1"
+        android:id="@+id/kart_6_36"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/kart_6_35"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_30"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_28"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_22"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_22"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_22"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_7"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="@+id/kart_6_1"
         app:layout_constraintTop_toBottomOf="@+id/kart_6_1"
         app:srcCompat="@drawable/kart" />
 
     <ImageView
-        android:id="@+id/kart_6_2"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/kart_6_31"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_25"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_25"
         app:srcCompat="@drawable/kart" />
 
     <ImageView
-        android:id="@+id/kart_6_0"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="18dp"
+        android:id="@+id/kart_6_17"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_11"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_11"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_11"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_23"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_17"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_17"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_17"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_1"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/kart" />
 
     <ImageView
-        android:id="@+id/kart_6_1"
-        android:layout_width="100dp"
-        android:layout_height="166dp"
-        android:layout_marginTop="18dp"
-        app:layout_constraintEnd_toStartOf="@+id/kart_6_2"
-        app:layout_constraintStart_toEndOf="@+id/kart_6_0"
+        android:id="@+id/kart_6_32"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_26"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_26"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_26"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_4"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toEndOf="@+id/kart_6_3"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_35"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_29"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_29"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_29"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_21"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_15"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_15"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_15"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_33"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_27"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_27"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_27"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_34"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/kart_6_28"
+        app:layout_constraintStart_toStartOf="@+id/kart_6_28"
+        app:layout_constraintTop_toBottomOf="@+id/kart_6_28"
+        app:srcCompat="@drawable/kart" />
+
+    <ImageView
+        android:id="@+id/kart_6_5"
+        android:layout_width="60dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintStart_toEndOf="@+id/kart_6_4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/kart" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

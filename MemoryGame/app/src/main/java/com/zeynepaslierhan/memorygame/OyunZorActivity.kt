@@ -15,9 +15,11 @@ class OyunZorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oyunzor)
 
-        val images = mutableListOf(R.drawable.albus4x4,R.drawable.bellatrix4x4,R.drawable.cho4x4,
-            R.drawable.helga4x4,R.drawable.horace4x4,R.drawable.luna4x4,
-            R.drawable.madam4x4, R.drawable.nymph4x4)
+        val images = mutableListOf(R.drawable.arthur6x6,R.drawable.cedric6x6,R.drawable.dolores6x6,
+            R.drawable.draco6x6,R.drawable.snape6x6,R.drawable.gilderoy6x6, R.drawable.hagrid6x6,
+            R.drawable.hermoine6x6, R.drawable.sybil6x6,R.drawable.lucius6x6,R.drawable.lupin6x6,
+            R.drawable.narcissa6x6,R.drawable.newt6x6,R.drawable.pamona6x6, R.drawable.quirrell6x6,
+            R.drawable.ron6x6, R.drawable.rowena6x6,R.drawable.sirius6x6)
 
         // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
         images.addAll(images)
@@ -54,7 +56,7 @@ class OyunZorActivity : AppCompatActivity() {
             if (card.isMatched) {
                 view.alpha = 0.3f
             }
-            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart4x4)
+            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart6x6)
         }
     }
 

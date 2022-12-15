@@ -4,7 +4,24 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_oyunorta.*
 import kotlinx.android.synthetic.main.activity_oyunzor.*
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView1
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView10
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView11
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView12
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView13
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView14
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView15
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView16
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView2
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView3
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView4
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView5
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView6
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView7
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView8
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView9
 
 class OyunZorActivity : AppCompatActivity() {
     private lateinit var views: List<ImageView>
@@ -15,11 +32,11 @@ class OyunZorActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oyunzor)
 
-        val images = mutableListOf(R.drawable.arthur6x6,R.drawable.cedric6x6,R.drawable.dolores6x6,
-            R.drawable.draco6x6,R.drawable.snape6x6,R.drawable.gilderoy6x6, R.drawable.hagrid6x6,
-            R.drawable.hermoine6x6, R.drawable.sybil6x6,R.drawable.lucius6x6,R.drawable.lupin6x6,
-            R.drawable.narcissa6x6,R.drawable.newt6x6,R.drawable.pamona6x6, R.drawable.quirrell6x6,
-            R.drawable.ron6x6, R.drawable.rowena6x6,R.drawable.sirius6x6)
+        val images = mutableListOf(R.drawable.gryffindor1,R.drawable.gryffindor2,R.drawable.gryffindor3,
+            R.drawable.gryffindor4,R.drawable.slytherin1,R.drawable.slytherin2, R.drawable.slytherin3,
+            R.drawable.slytherin4, R.drawable.hufflepuff1,R.drawable.hufflepuff2,R.drawable.hufflepuff3,
+            R.drawable.hufflepuff4,R.drawable.ravenclaw1,R.drawable.ravenclaw2, R.drawable.ravenclaw3,
+            R.drawable.ravenclaw4, R.drawable.hufflepuff4,R.drawable.hufflepuff4)
 
         // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
         images.addAll(images)
@@ -27,10 +44,13 @@ class OyunZorActivity : AppCompatActivity() {
         // sırayı randomize ediyor.
         images.shuffle()
 
-        views = listOf(kart_6_1,kart_6_2,kart_6_3,kart_6_4,kart_6_5,kart_6_6,kart_6_7,kart_6_8,kart_6_9,
-            kart_6_10,kart_6_11,kart_6_12,kart_6_13,kart_6_14,kart_6_15,kart_6_16,kart_6_17,kart_6_18,
-            kart_6_19,kart_6_20,kart_6_21,kart_6_22,kart_6_23,kart_6_24,kart_6_25,kart_6_26,kart_6_27,
-            kart_6_28,kart_6_29,kart_6_30,kart_6_31,kart_6_32,kart_6_33,kart_6_34,kart_6_35,kart_6_36)
+        views = listOf(imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,
+            imageView7,imageView8,imageView9,imageView10,imageView11,imageView12,
+            imageView13,imageView14,imageView15,imageView16,imageView17,imageView18,
+            imageView19,imageView20,imageView21,imageView22,imageView23,imageView24,
+            imageView25, imageView26,imageView27,imageView28,imageView29,imageView30,
+            imageView31,imageView32,imageView33,imageView34,imageView35,imageView36)
+
 
         cards = views.indices.map { index ->
             MemoryCard(images[index])
@@ -56,7 +76,7 @@ class OyunZorActivity : AppCompatActivity() {
             if (card.isMatched) {
                 view.alpha = 0.3f
             }
-            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart6x6)
+            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart)
         }
     }
 

@@ -10,370 +10,436 @@
     tools:layout_editor_absoluteY="0dp">
 
     <ImageView
-        android:id="@+id/kart_6_6"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="5dp"
+        android:id="@+id/imageView5"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/kart_6_5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_9"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_3"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_3"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_3"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_14"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_8"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_8"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_8"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_30"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/kart_6_29"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_24"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_27"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_21"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_21"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_21"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_3"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toEndOf="@+id/kart_6_2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_11"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_5"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_5"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_5"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_20"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_14"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_14"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_14"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_24"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/kart_6_23"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_18"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_10"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_4"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_4"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_4"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_22"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_16"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_16"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_16"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_13"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_7"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_7"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_16"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_10"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_10"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_10"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_15"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_9"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_9"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_9"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_18"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/kart_6_17"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_12"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_25"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_19"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_19"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_19"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_13"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_13"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_12"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/kart_6_11"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_6"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_26"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_20"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_20"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_20"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_29"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_23"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_23"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_23"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_8"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_2"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_2"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_2"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_2"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toEndOf="@+id/kart_6_1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_36"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/kart_6_35"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_30"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_28"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_22"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_22"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_22"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_7"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_1"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_1"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_31"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_25"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_25"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_17"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_11"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_11"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_11"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_23"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_17"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_17"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_17"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_1"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="48dp"
+        app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/kart" />
+        app:layout_constraintVertical_bias="0.971" />
 
     <ImageView
-        android:id="@+id/kart_6_32"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_26"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_26"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_26"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_4"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toEndOf="@+id/kart_6_3"
+        android:id="@+id/imageView10"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/kart" />
+        app:layout_constraintVertical_bias="0.605" />
 
     <ImageView
-        android:id="@+id/kart_6_35"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_29"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_29"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_29"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_21"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_15"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_15"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_15"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_33"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_27"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_27"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_27"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_34"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/kart_6_28"
-        app:layout_constraintStart_toStartOf="@+id/kart_6_28"
-        app:layout_constraintTop_toBottomOf="@+id/kart_6_28"
-        app:srcCompat="@drawable/kart" />
-
-    <ImageView
-        android:id="@+id/kart_6_5"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toEndOf="@+id/kart_6_4"
+        android:id="@+id/imageView26"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/kart" />
+        app:layout_constraintVertical_bias="0.605" />
+
+    <ImageView
+        android:id="@+id/imageView34"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.605" />
+
+    <ImageView
+        android:id="@+id/imageView35"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.602" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.602" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.602" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.969" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.969" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.573"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.969" />
+
+    <ImageView
+        android:id="@+id/imageView29"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.393"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <ImageView
+        android:id="@+id/imageView30"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.971" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416" />
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416" />
+
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" />
+
+    <ImageView
+        android:id="@+id/imageView32"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.229"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" />
+
+    <ImageView
+        android:id="@+id/imageView33"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.393"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.419" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.236" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.234" />
+
+    <ImageView
+        android:id="@+id/imageView23"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239" />
+
+    <ImageView
+        android:id="@+id/imageView25"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.393"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239" />
+
+    <ImageView
+        android:id="@+id/imageView27"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.236" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.753"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <ImageView
+        android:id="@+id/imageView28"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <ImageView
+        android:id="@+id/imageView31"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.224"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.922"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.789" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.789" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
+
+    <ImageView
+        android:id="@+id/imageView36"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.393"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

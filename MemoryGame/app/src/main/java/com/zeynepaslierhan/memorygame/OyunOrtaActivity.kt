@@ -16,9 +16,9 @@ class OyunOrtaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oyunorta)
 
-        val images = mutableListOf(R.drawable.albus4x4,R.drawable.bellatrix4x4,R.drawable.cho4x4,
-            R.drawable.helga4x4,R.drawable.horace4x4,R.drawable.luna4x4,
-            R.drawable.madam4x4, R.drawable.nymph4x4)
+        val images = mutableListOf(R.drawable.gryffindor1,R.drawable.hufflepuff1,R.drawable.gryffindor3,
+            R.drawable.slytherin2,R.drawable.slytherin3,R.drawable.ravenclaw1,
+            R.drawable.ravenclaw4, R.drawable.gryffindor2)
 
         // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
         images.addAll(images)
@@ -26,7 +26,7 @@ class OyunOrtaActivity : AppCompatActivity() {
         // sırayı randomize ediyor.
         images.shuffle()
 
-        views = listOf(imageView,imageView2,imageView3,imageView4,imageView5,imageView6,imageView7,imageView8,imageView9,
+        views = listOf(imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,imageView7,imageView8,imageView9,
             imageView10,imageView11,imageView12,imageView13,imageView14,imageView15,imageView16)
 
         cards = views.indices.map { index ->
@@ -53,7 +53,7 @@ class OyunOrtaActivity : AppCompatActivity() {
             if (card.isMatched) {
                 view.alpha = 0.3f
             }
-            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart4x4)
+            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart)
         }
     }
 

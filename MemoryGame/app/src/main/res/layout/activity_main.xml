@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
-        android:background="#999BFEFE"
+        android:background="#997CB342"
         android:backgroundTint="#999BFEFE"
         android:onClick="login"
         android:paddingLeft="20dp"

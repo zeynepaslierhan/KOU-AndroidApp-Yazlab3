@@ -12,50 +12,50 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="123dp"
-        android:layout_height="197dp"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
         android:src="@drawable/kart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintHorizontal_bias="0.787"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="123dp"
-        android:layout_height="197dp"
-        android:src="@drawable/kart"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.826"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217" />
+        app:layout_constraintVertical_bias="0.641" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="123dp"
-        android:layout_height="197dp"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
         android:src="@drawable/kart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintHorizontal_bias="0.237"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.705" />
+        app:layout_constraintVertical_bias="0.641" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
+        android:src="@drawable/kart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.316" />
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="123dp"
-        android:layout_height="197dp"
+        android:layout_width="100dp"
+        android:layout_height="140dp"
         android:src="@drawable/kart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.177"
+        app:layout_constraintHorizontal_bias="0.237"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217" />
+        app:layout_constraintVertical_bias="0.316" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

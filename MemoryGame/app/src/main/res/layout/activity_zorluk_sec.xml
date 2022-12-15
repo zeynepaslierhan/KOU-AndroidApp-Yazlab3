@@ -8,6 +8,9 @@
     tools:context=".zorluk_secActivity">
 
     <Button
+
+        android:background="#99C2A690"
+        android:backgroundTint="#99FFFFFF"
         android:id="@+id/button_basit3"
         android:layout_width="150dp"
         android:layout_height="60dp"
@@ -21,6 +24,9 @@
         app:layout_constraintTop_toBottomOf="@+id/button_basit2" />
 
     <Button
+
+        android:background="#99C2A690"
+        android:backgroundTint="#99FFFFFF"
         android:id="@+id/button_basit2"
         android:layout_width="150dp"
         android:layout_height="60dp"
@@ -34,6 +40,9 @@
         app:layout_constraintTop_toBottomOf="@+id/button_basit" />
 
     <Button
+
+        android:background="#99C2A690"
+        android:backgroundTint="#99FFFFFF"
         android:id="@+id/button_basit"
         android:layout_width="150dp"
         android:layout_height="60dp"

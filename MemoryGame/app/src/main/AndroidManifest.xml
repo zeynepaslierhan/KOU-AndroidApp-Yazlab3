@@ -43,7 +43,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity2"
+            android:name=".OyunBasitActivity"
             android:exported="false">
 
             <meta-data

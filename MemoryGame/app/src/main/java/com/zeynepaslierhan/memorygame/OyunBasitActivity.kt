@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_oyunbasit.*
 
-class MainActivity2 : AppCompatActivity() {
+class OyunBasitActivity : AppCompatActivity() {
 
     private lateinit var views: List<ImageView>
     private lateinit var cards: List<MemoryCard>

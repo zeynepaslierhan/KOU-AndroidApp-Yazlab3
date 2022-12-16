@@ -93,7 +93,6 @@ class OyunOrtaActivity : AppCompatActivity() {
                 }else{
                     sayac.text = "Kalan Süre: ${p0 / 1000}"
                 }
-                sayac.text = "Kalan Süre: ${p0 / 1000}"
             }
 
             override fun onFinish() {

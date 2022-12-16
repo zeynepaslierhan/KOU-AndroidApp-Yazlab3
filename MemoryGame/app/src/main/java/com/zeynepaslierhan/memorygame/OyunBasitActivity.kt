@@ -28,6 +28,8 @@ class OyunBasitActivity : AppCompatActivity() {
     private var MPwin: MediaPlayer? = null
     private var MPlost: MediaPlayer? = null
 
+    private var matchCounter : Int?=0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oyunbasit)
@@ -73,20 +75,27 @@ class OyunBasitActivity : AppCompatActivity() {
         }
 
         object : CountDownTimer(60000,1000) {
-            override fun onTick(p0: Long) {
-                sayac.text = "Kalan Süre: ${p0 / 1000}"
+            override fun onTick(time: Long) {
+                if(matchCounter == 2)
+                {
+                    sayac.text = "Tebrikler!!!"
+                }else{
+                    sayac.text = "Kalan Süre: ${time / 1000}"
+                }
             }
 
             override fun onFinish() {
 
-                MPlost?.start()
+                if(matchCounter != 2)
+                {
+                    MPlost?.start()
 
-                sayac.text = "Süre Bitti!"
-                imageView1.isVisible=false;
-                imageView2.isVisible=false;
-                imageView3.isVisible=false;
-                imageView4.isVisible=false;
-
+                    sayac.text = "Süre Bitti!"
+                    imageView1.isVisible=false;
+                    imageView2.isVisible=false;
+                    imageView3.isVisible=false;
+                    imageView4.isVisible=false;
+                }
 
                 val handler = Handler()
                 handler.postDelayed({ // Do something after 5s = 5000ms
@@ -150,7 +159,7 @@ class OyunBasitActivity : AppCompatActivity() {
     private fun checkForMatch(position1: Int, position2: Int) {
         if (cards[position1].identifier == cards[position2].identifier) {
 
-            MPmatch?.start()
+            matchCounter = matchCounter?.plus(1)
 
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
 
@@ -159,6 +168,23 @@ class OyunBasitActivity : AppCompatActivity() {
 
             puan = puan + 10
             puanTextView.text = " Puan: ${puan.toString()}"
+
+            if(matchCounter == 2){
+                MPwin?.start()
+
+                val handler = Handler()
+                handler.postDelayed({ // Do something after 5s = 5000ms
+                    val intent = Intent(this@OyunBasitActivity,zorluk_secActivity::class.java)
+                    startActivity(intent)
+
+                    MPbacground?.stop()
+                    MPmatch?.stop()
+                    MPwin?.stop()
+                    finish()
+                }, 10000)
+            }else{
+                MPmatch?.start()
+            }
         }
     }
 

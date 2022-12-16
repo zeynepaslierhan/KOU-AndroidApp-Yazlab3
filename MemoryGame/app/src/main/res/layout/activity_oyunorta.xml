@@ -220,7 +220,7 @@
         android:id="@+id/puanTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Puan: 100"
+        android:text="Puan: 0"
         android:textColor="#E6AAAAAA"
         android:textSize="20sp"
         android:textStyle="bold"

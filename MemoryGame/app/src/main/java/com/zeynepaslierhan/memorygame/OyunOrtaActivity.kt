@@ -9,8 +9,15 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import kotlinx.android.synthetic.main.activity_oyunbasit.*
 
 import kotlinx.android.synthetic.main.activity_oyunorta.*
+import kotlinx.android.synthetic.main.activity_oyunorta.imageView1
+import kotlinx.android.synthetic.main.activity_oyunorta.imageView2
+import kotlinx.android.synthetic.main.activity_oyunorta.imageView3
+import kotlinx.android.synthetic.main.activity_oyunorta.imageView4
+import kotlinx.android.synthetic.main.activity_oyunorta.puanTextView
+import kotlinx.android.synthetic.main.activity_oyunorta.sayac
 
 class OyunOrtaActivity : AppCompatActivity() {
 
@@ -24,6 +31,8 @@ class OyunOrtaActivity : AppCompatActivity() {
     private var MPmatch: MediaPlayer? = null
     private var MPwin: MediaPlayer? = null
     private var MPlost: MediaPlayer? = null
+
+    private var matchCounter : Int?=0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,31 +87,41 @@ class OyunOrtaActivity : AppCompatActivity() {
 
         object : CountDownTimer(60000,1000) {
             override fun onTick(p0: Long) {
+                if(matchCounter == 8)
+                {
+                    sayac.text = "Tebrikler!!!"
+                }else{
+                    sayac.text = "Kalan Süre: ${p0 / 1000}"
+                }
                 sayac.text = "Kalan Süre: ${p0 / 1000}"
             }
 
             override fun onFinish() {
 
-                sayac.text = "Süre Bitti!"
+                if(matchCounter != 8)
+                {
+                    MPlost?.start()
 
-                MPlost?.start()
+                    sayac.text = "Süre Bitti!"
 
-                imageView1.isVisible=false;
-                imageView2.isVisible=false;
-                imageView3.isVisible=false;
-                imageView4.isVisible=false;
-                imageView5.isVisible=false;
-                imageView6.isVisible=false;
-                imageView7.isVisible=false;
-                imageView8.isVisible=false;
-                imageView9.isVisible=false;
-                imageView10.isVisible=false;
-                imageView11.isVisible=false;
-                imageView12.isVisible=false;
-                imageView13.isVisible=false;
-                imageView14.isVisible=false;
-                imageView15.isVisible=false;
-                imageView16.isVisible=false;
+
+                    imageView1.isVisible=false;
+                    imageView2.isVisible=false;
+                    imageView3.isVisible=false;
+                    imageView4.isVisible=false;
+                    imageView5.isVisible=false;
+                    imageView6.isVisible=false;
+                    imageView7.isVisible=false;
+                    imageView8.isVisible=false;
+                    imageView9.isVisible=false;
+                    imageView10.isVisible=false;
+                    imageView11.isVisible=false;
+                    imageView12.isVisible=false;
+                    imageView13.isVisible=false;
+                    imageView14.isVisible=false;
+                    imageView15.isVisible=false;
+                    imageView16.isVisible=false;
+                }
 
                 val handler = Handler()
                 handler.postDelayed({ // Do something after 5s = 5000ms
@@ -166,7 +185,7 @@ class OyunOrtaActivity : AppCompatActivity() {
     private fun checkForMatch(position1: Int, position2: Int) {
         if (cards[position1].identifier == cards[position2].identifier) {
 
-            MPmatch?.start()
+            matchCounter = matchCounter?.plus(1)
 
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
             cards[position1].isMatched = true
@@ -174,6 +193,22 @@ class OyunOrtaActivity : AppCompatActivity() {
 
             puan = puan + 10
             puanTextView.text = " Puan: ${puan.toString()}"
+
+            if(matchCounter == 8){
+                MPwin?.start()
+                val handler = Handler()
+                handler.postDelayed({ // Do something after 5s = 5000ms
+                    val intent = Intent(this@OyunOrtaActivity,zorluk_secActivity::class.java)
+                    startActivity(intent)
+
+                    MPbacground?.stop()
+                    MPmatch?.stop()
+                    MPwin?.stop()
+                    finish()
+                }, 10000)
+            }else{
+                MPmatch?.start()
+            }
         }
     }
 

@@ -9,8 +9,28 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import kotlinx.android.synthetic.main.activity_oyunbasit.*
+import kotlinx.android.synthetic.main.activity_oyunorta.*
 
 import kotlinx.android.synthetic.main.activity_oyunzor.*
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView1
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView10
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView11
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView12
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView13
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView14
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView15
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView16
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView2
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView3
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView4
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView5
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView6
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView7
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView8
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView9
+import kotlinx.android.synthetic.main.activity_oyunzor.puanTextView
+import kotlinx.android.synthetic.main.activity_oyunzor.sayac
 
 class OyunZorActivity : AppCompatActivity() {
 
@@ -24,6 +44,7 @@ class OyunZorActivity : AppCompatActivity() {
     private var MPmatch: MediaPlayer? = null
     private var MPwin: MediaPlayer? = null
     private var MPlost: MediaPlayer? = null
+
     private var matchCounter : Int?=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -83,24 +104,32 @@ class OyunZorActivity : AppCompatActivity() {
 
         object : CountDownTimer(60000,1000) {
             override fun onTick(p0: Long) {
-                sayac.text = "Kalan Süre: ${p0 / 1000}"
+                if(matchCounter == 18)
+                {
+                    sayac.text = "Tebrikler!!!"
+                }else{
+                    sayac.text = "Kalan Süre: ${p0 / 1000}"
+                }
             }
 
             override fun onFinish() {
-                sayac.text = "Süre Bitti!"
+                if(matchCounter != 8)
+                {
+                    MPlost?.start()
 
-                MPlost?.start()
+                    sayac.text = "Süre Bitti!"
 
-                imageView1.isVisible=false; imageView2.isVisible=false; imageView3.isVisible=false; imageView4.isVisible=false;
-                imageView5.isVisible=false; imageView6.isVisible=false; imageView7.isVisible=false; imageView8.isVisible=false;
-                imageView9.isVisible=false; imageView10.isVisible=false; imageView11.isVisible=false; imageView12.isVisible=false;
-                imageView13.isVisible=false; imageView14.isVisible=false; imageView15.isVisible=false; imageView16.isVisible=false;
-                imageView17.isVisible=false; imageView18.isVisible=false; imageView19.isVisible=false; imageView20.isVisible=false;
-                imageView21.isVisible=false; imageView22.isVisible=false; imageView23.isVisible=false; imageView24.isVisible=false;
-                imageView25.isVisible=false; imageView26.isVisible=false; imageView27.isVisible=false; imageView28.isVisible=false;
-                imageView29.isVisible=false; imageView30.isVisible=false; imageView31.isVisible=false; imageView32.isVisible=false;
-                imageView33.isVisible=false; imageView34.isVisible=false; imageView35.isVisible=false; imageView36.isVisible=false;
+                    imageView1.isVisible=false; imageView2.isVisible=false; imageView3.isVisible=false; imageView4.isVisible=false;
+                    imageView5.isVisible=false; imageView6.isVisible=false; imageView7.isVisible=false; imageView8.isVisible=false;
+                    imageView9.isVisible=false; imageView10.isVisible=false; imageView11.isVisible=false; imageView12.isVisible=false;
+                    imageView13.isVisible=false; imageView14.isVisible=false; imageView15.isVisible=false; imageView16.isVisible=false;
+                    imageView17.isVisible=false; imageView18.isVisible=false; imageView19.isVisible=false; imageView20.isVisible=false;
+                    imageView21.isVisible=false; imageView22.isVisible=false; imageView23.isVisible=false; imageView24.isVisible=false;
+                    imageView25.isVisible=false; imageView26.isVisible=false; imageView27.isVisible=false; imageView28.isVisible=false;
+                    imageView29.isVisible=false; imageView30.isVisible=false; imageView31.isVisible=false; imageView32.isVisible=false;
+                    imageView33.isVisible=false; imageView34.isVisible=false; imageView35.isVisible=false; imageView36.isVisible=false;
 
+                }
                 val handler = Handler()
                 handler.postDelayed({ // Do something after 5s = 5000ms
                     val intent = Intent(this@OyunZorActivity,zorluk_secActivity::class.java)
@@ -162,7 +191,7 @@ class OyunZorActivity : AppCompatActivity() {
     private fun checkForMatch(position1: Int, position2: Int) {
         if (cards[position1].identifier == cards[position2].identifier) {
 
-            MPmatch?.start()
+            matchCounter = matchCounter?.plus(1)
 
             puan = puan + 10
             puanTextView.text = " Puan: ${puan.toString()}"
@@ -170,6 +199,24 @@ class OyunZorActivity : AppCompatActivity() {
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
             cards[position1].isMatched = true
             cards[position2].isMatched = true
+
+            if(matchCounter == 18){
+                MPwin?.start()
+
+                val handler = Handler()
+                handler.postDelayed({ // Do something after 5s = 5000ms
+                    val intent = Intent(this@OyunZorActivity,zorluk_secActivity::class.java)
+                    startActivity(intent)
+
+                    MPbacground?.stop()
+                    MPmatch?.stop()
+                    MPwin?.stop()
+                    finish()
+                }, 10000)
+            }else{
+                MPmatch?.start()
+            }
+
         }
     }
 

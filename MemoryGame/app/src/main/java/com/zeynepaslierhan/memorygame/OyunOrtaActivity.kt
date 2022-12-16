@@ -14,10 +14,14 @@ class OyunOrtaActivity : AppCompatActivity() {
     private lateinit var views: List<ImageView>
     private lateinit var cards: List<MemoryCard>
     private var indexOfSingleSelectedCard: Int? = null
+    private var puan : Int = 0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oyunorta)
+
+        puanTextView.text = " Puan: ${puan.toString()}"
 
         val images = mutableListOf(R.drawable.gryffindor1,R.drawable.hufflepuff1,R.drawable.gryffindor3,
             R.drawable.slytherin2,R.drawable.slytherin3,R.drawable.ravenclaw1,
@@ -54,6 +58,7 @@ class OyunOrtaActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+
                 sayac.text = "Süre Bitti!"
                 imageView1.isVisible=false;
                 imageView2.isVisible=false;
@@ -132,6 +137,9 @@ class OyunOrtaActivity : AppCompatActivity() {
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
             cards[position1].isMatched = true
             cards[position2].isMatched = true
+
+            puan = puan + 10
+            puanTextView.text = " Puan: ${puan.toString()}"
         }
     }
 }

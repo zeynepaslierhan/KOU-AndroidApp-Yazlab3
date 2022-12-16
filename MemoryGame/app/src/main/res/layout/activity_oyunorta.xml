@@ -217,7 +217,7 @@
         app:layout_constraintVertical_bias="0.102" />
 
     <TextView
-        android:id="@+id/puan"
+        android:id="@+id/puanTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Puan: 100"

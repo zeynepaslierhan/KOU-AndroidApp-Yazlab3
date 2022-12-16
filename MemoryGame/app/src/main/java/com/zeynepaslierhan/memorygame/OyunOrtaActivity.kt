@@ -1,5 +1,6 @@
 package com.zeynepaslierhan.memorygame
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -17,7 +18,10 @@ class OyunOrtaActivity : AppCompatActivity() {
     private var indexOfSingleSelectedCard: Int? = null
     private var puan : Int = 0
 
-    private var mMediaPlayer: MediaPlayer? = null
+    private var MPbacground: MediaPlayer? = null
+    private var MPmatch: MediaPlayer? = null
+    private var MPwin: MediaPlayer? = null
+    private var MPlost: MediaPlayer? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +29,18 @@ class OyunOrtaActivity : AppCompatActivity() {
         setContentView(R.layout.activity_oyunorta)
 
 
-        if (mMediaPlayer == null) {
-            mMediaPlayer = MediaPlayer.create(this, R.raw.background)
-            mMediaPlayer!!.start()
+        if (MPbacground == null) {
+            MPbacground = MediaPlayer.create(this, R.raw.background)
+            MPbacground!!.start()
+        }
+        if (MPmatch == null) {
+            MPmatch = MediaPlayer.create(this, R.raw.card_match)
+        }
+        if (MPwin == null) {
+            MPwin = MediaPlayer.create(this, R.raw.win_congrats)
+        }
+        if (MPlost == null) {
+            MPlost = MediaPlayer.create(this, R.raw.time_over)
         }
 
         puanTextView.text = " Puan: ${puan.toString()}"
@@ -69,6 +82,9 @@ class OyunOrtaActivity : AppCompatActivity() {
             override fun onFinish() {
 
                 sayac.text = "Süre Bitti!"
+
+                MPlost?.start()
+
                 imageView1.isVisible=false;
                 imageView2.isVisible=false;
                 imageView3.isVisible=false;
@@ -88,7 +104,11 @@ class OyunOrtaActivity : AppCompatActivity() {
 
                 val handler = Handler()
                 handler.postDelayed({ // Do something after 5s = 5000ms
-                    setContentView(R.layout.activity_zorluk_sec)
+                    val intent = Intent(this@OyunOrtaActivity,zorluk_secActivity::class.java)
+                    startActivity(intent)
+
+                    MPbacground?.stop()
+                    finish()
                 }, 5000)
             }
         }.start()
@@ -143,6 +163,9 @@ class OyunOrtaActivity : AppCompatActivity() {
 
     private fun checkForMatch(position1: Int, position2: Int) {
         if (cards[position1].identifier == cards[position2].identifier) {
+
+            MPmatch?.start()
+
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
             cards[position1].isMatched = true
             cards[position2].isMatched = true
@@ -157,6 +180,8 @@ class OyunOrtaActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         finish()
-        mMediaPlayer?.stop()
+        MPbacground?.stop()
+        MPmatch?.stop()
+        MPwin?.stop()
     }
 }

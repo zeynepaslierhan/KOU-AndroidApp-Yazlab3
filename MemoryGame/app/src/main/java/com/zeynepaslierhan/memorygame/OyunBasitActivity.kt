@@ -85,9 +85,14 @@ class OyunBasitActivity : AppCompatActivity() {
                 imageView3.isVisible=false;
                 imageView4.isVisible=false;
 
+
                 val handler = Handler()
                 handler.postDelayed({ // Do something after 5s = 5000ms
-                    setContentView(R.layout.activity_zorluk_sec)
+                    val intent = Intent(this@OyunBasitActivity,zorluk_secActivity::class.java)
+                    startActivity(intent)
+
+                    MPbacground?.stop()
+                    finish()
                 }, 5000)
             }
         }.start()
@@ -143,7 +148,6 @@ class OyunBasitActivity : AppCompatActivity() {
     private fun checkForMatch(position1: Int, position2: Int) {
         if (cards[position1].identifier == cards[position2].identifier) {
 
-            MPbacground?.stop()
             MPmatch?.start()
 
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();

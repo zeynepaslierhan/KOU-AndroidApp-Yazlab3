@@ -173,7 +173,7 @@ class OyunBasitActivity : AppCompatActivity() {
                 MPwin?.start()
 
                 val handler = Handler()
-                handler.postDelayed({ // Do something after 5s = 5000ms
+                handler.postDelayed({ // Do something after 8s = 8000ms
                     val intent = Intent(this@OyunBasitActivity,zorluk_secActivity::class.java)
                     startActivity(intent)
 
@@ -181,7 +181,7 @@ class OyunBasitActivity : AppCompatActivity() {
                     MPmatch?.stop()
                     MPwin?.stop()
                     finish()
-                }, 10000)
+                }, 8000)
             }else{
                 MPmatch?.start()
             }

@@ -9,15 +9,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import kotlinx.android.synthetic.main.activity_oyunbasit.*
-
 import kotlinx.android.synthetic.main.activity_oyunorta.*
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView1
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView2
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView3
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView4
-import kotlinx.android.synthetic.main.activity_oyunorta.puanTextView
-import kotlinx.android.synthetic.main.activity_oyunorta.sayac
 
 class OyunOrtaActivity : AppCompatActivity() {
 
@@ -196,7 +188,7 @@ class OyunOrtaActivity : AppCompatActivity() {
             if(matchCounter == 8){
                 MPwin?.start()
                 val handler = Handler()
-                handler.postDelayed({ // Do something after 5s = 5000ms
+                handler.postDelayed({ // Do something after 8s = 8000ms
                     val intent = Intent(this@OyunOrtaActivity,zorluk_secActivity::class.java)
                     startActivity(intent)
 
@@ -204,7 +196,7 @@ class OyunOrtaActivity : AppCompatActivity() {
                     MPmatch?.stop()
                     MPwin?.stop()
                     finish()
-                }, 10000)
+                }, 8000)
             }else{
                 MPmatch?.start()
             }

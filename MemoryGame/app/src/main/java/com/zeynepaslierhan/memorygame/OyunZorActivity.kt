@@ -9,17 +9,22 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+
 import kotlinx.android.synthetic.main.activity_oyunzor.*
 
 class OyunZorActivity : AppCompatActivity() {
+
     private lateinit var views: List<ImageView>
     private lateinit var cards: List<MemoryCard>
     private var indexOfSingleSelectedCard: Int? = null
+
+    private var puan : Int = 0
 
     private var MPbacground: MediaPlayer? = null
     private var MPmatch: MediaPlayer? = null
     private var MPwin: MediaPlayer? = null
     private var MPlost: MediaPlayer? = null
+    private var matchCounter : Int?=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -159,12 +164,14 @@ class OyunZorActivity : AppCompatActivity() {
 
             MPmatch?.start()
 
+            puan = puan + 10
+            puanTextView.text = " Puan: ${puan.toString()}"
+
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
             cards[position1].isMatched = true
             cards[position2].isMatched = true
         }
     }
-
 
 
     override fun onBackPressed() {

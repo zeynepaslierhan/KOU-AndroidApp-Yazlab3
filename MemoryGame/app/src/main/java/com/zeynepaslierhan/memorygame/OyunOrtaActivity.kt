@@ -9,6 +9,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+
 import kotlinx.android.synthetic.main.activity_oyunorta.*
 
 class OyunOrtaActivity : AppCompatActivity() {
@@ -16,6 +17,7 @@ class OyunOrtaActivity : AppCompatActivity() {
     private lateinit var views: List<ImageView>
     private lateinit var cards: List<MemoryCard>
     private var indexOfSingleSelectedCard: Int? = null
+
     private var puan : Int = 0
 
     private var MPbacground: MediaPlayer? = null

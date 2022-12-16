@@ -5,11 +5,11 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
-import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+
 import kotlinx.android.synthetic.main.activity_oyunbasit.*
 
 
@@ -20,6 +20,8 @@ class OyunBasitActivity : AppCompatActivity() {
     private lateinit var views: List<ImageView>
     private lateinit var cards: List<MemoryCard>
     private var indexOfSingleSelectedCard: Int? = null
+
+    private var puan : Int = 0
 
     private var MPbacground: MediaPlayer? = null
     private var MPmatch: MediaPlayer? = null
@@ -155,14 +157,8 @@ class OyunBasitActivity : AppCompatActivity() {
             cards[position1].isMatched = true
             cards[position2].isMatched = true
 
-
-            if(cards[position1].identifier == R.drawable.gryffindor1)
-            {
-                Log.d(TAG, "Durum 1")
-            }
-            else if (cards[position1].identifier == R.drawable.hufflepuff1){
-                Log.d(TAG, "Durum 2")
-            }
+            puan = puan + 10
+            puanTextView.text = " Puan: ${puan.toString()}"
         }
     }
 

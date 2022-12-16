@@ -73,7 +73,6 @@ class MultiplayerCodeGeneratorActivity : AppCompatActivity() {
                     }
 
                     override fun onCancelled(error: DatabaseError) {
-                        TODO("Not yet implemented")
                     }
                 })
             }else{
@@ -125,6 +124,9 @@ class MultiplayerCodeGeneratorActivity : AppCompatActivity() {
 
                             }
                         },2000)
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
                     }
                 })
 

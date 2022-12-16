@@ -1,5 +1,6 @@
 package com.zeynepaslierhan.memorygame
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
@@ -14,9 +15,17 @@ class OyunZorActivity : AppCompatActivity() {
     private lateinit var cards: List<MemoryCard>
     private var indexOfSingleSelectedCard: Int? = null
 
+    private var mMediaPlayer: MediaPlayer? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oyunzor)
+
+
+        if (mMediaPlayer == null) {
+            mMediaPlayer = MediaPlayer.create(this, R.raw.background)
+            mMediaPlayer!!.start()
+        }
 
         val images = mutableListOf(R.drawable.gryffindor1,R.drawable.gryffindor2,R.drawable.gryffindor3,
             R.drawable.gryffindor4,R.drawable.slytherin1,R.drawable.slytherin2, R.drawable.slytherin3,
@@ -131,5 +140,13 @@ class OyunZorActivity : AppCompatActivity() {
             cards[position1].isMatched = true
             cards[position2].isMatched = true
         }
+    }
+
+
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        mMediaPlayer?.stop()
     }
 }

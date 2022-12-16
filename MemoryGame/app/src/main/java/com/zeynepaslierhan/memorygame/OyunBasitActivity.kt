@@ -1,5 +1,7 @@
 package com.zeynepaslierhan.memorygame
 
+import android.content.Intent
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
@@ -10,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_oyunbasit.*
 
+
 private const val TAG = "Basit Test";
 
 class OyunBasitActivity : AppCompatActivity() {
@@ -18,9 +21,28 @@ class OyunBasitActivity : AppCompatActivity() {
     private lateinit var cards: List<MemoryCard>
     private var indexOfSingleSelectedCard: Int? = null
 
+    private var MPbacground: MediaPlayer? = null
+    private var MPmatch: MediaPlayer? = null
+    private var MPwin: MediaPlayer? = null
+    private var MPlost: MediaPlayer? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oyunbasit)
+
+        if (MPbacground == null) {
+            MPbacground = MediaPlayer.create(this, R.raw.background)
+            MPbacground!!.start()
+        }
+        if (MPmatch == null) {
+            MPmatch = MediaPlayer.create(this, R.raw.card_match)
+        }
+        if (MPwin == null) {
+            MPwin = MediaPlayer.create(this, R.raw.win_congrats)
+        }
+        if (MPlost == null) {
+            MPlost = MediaPlayer.create(this, R.raw.time_over)
+        }
 
         val images = mutableListOf(R.drawable.gryffindor1,R.drawable.hufflepuff1)
 
@@ -54,6 +76,9 @@ class OyunBasitActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
+
+                MPlost?.start()
+
                 sayac.text = "Süre Bitti!"
                 imageView1.isVisible=false;
                 imageView2.isVisible=false;
@@ -96,6 +121,7 @@ class OyunBasitActivity : AppCompatActivity() {
         if (indexOfSingleSelectedCard == null) {
             // 0 ya da 2 seçili kart varsa
             restoreCards()
+            MPbacground?.start()
             indexOfSingleSelectedCard = position
         } else {
             // 1 kart seçiliyse
@@ -116,9 +142,15 @@ class OyunBasitActivity : AppCompatActivity() {
 
     private fun checkForMatch(position1: Int, position2: Int) {
         if (cards[position1].identifier == cards[position2].identifier) {
+
+            MPbacground?.stop()
+            MPmatch?.start()
+
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
+
             cards[position1].isMatched = true
             cards[position2].isMatched = true
+
 
             if(cards[position1].identifier == R.drawable.gryffindor1)
             {
@@ -128,5 +160,13 @@ class OyunBasitActivity : AppCompatActivity() {
                 Log.d(TAG, "Durum 2")
             }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        MPbacground?.stop()
+        MPmatch?.stop()
+        MPwin?.stop()
     }
 }

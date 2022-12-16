@@ -1,5 +1,6 @@
 package com.zeynepaslierhan.memorygame
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
@@ -16,10 +17,18 @@ class OyunOrtaActivity : AppCompatActivity() {
     private var indexOfSingleSelectedCard: Int? = null
     private var puan : Int = 0
 
+    private var mMediaPlayer: MediaPlayer? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oyunorta)
+
+
+        if (mMediaPlayer == null) {
+            mMediaPlayer = MediaPlayer.create(this, R.raw.background)
+            mMediaPlayer!!.start()
+        }
 
         puanTextView.text = " Puan: ${puan.toString()}"
 
@@ -141,5 +150,13 @@ class OyunOrtaActivity : AppCompatActivity() {
             puan = puan + 10
             puanTextView.text = " Puan: ${puan.toString()}"
         }
+    }
+
+
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+        mMediaPlayer?.stop()
     }
 }

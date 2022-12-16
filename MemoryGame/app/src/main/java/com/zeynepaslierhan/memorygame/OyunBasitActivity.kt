@@ -3,11 +3,14 @@ package com.zeynepaslierhan.memorygame
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_oyunbasit.*
+
+private const val TAG = "Basit Test";
 
 class OyunBasitActivity : AppCompatActivity() {
 
@@ -116,6 +119,14 @@ class OyunBasitActivity : AppCompatActivity() {
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
             cards[position1].isMatched = true
             cards[position2].isMatched = true
+
+            if(cards[position1].identifier == R.drawable.gryffindor1)
+            {
+                Log.d(TAG, "Durum 1")
+            }
+            else if (cards[position1].identifier == R.drawable.hufflepuff1){
+                Log.d(TAG, "Durum 2")
+            }
         }
     }
 }

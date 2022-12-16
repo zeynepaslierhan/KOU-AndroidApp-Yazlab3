@@ -1,9 +1,12 @@
 package com.zeynepaslierhan.memorygame
 
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.os.Handler
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_oyunbasit.*
 
 class OyunBasitActivity : AppCompatActivity() {
@@ -41,6 +44,25 @@ class OyunBasitActivity : AppCompatActivity() {
 
             }
         }
+
+        object : CountDownTimer(60000,1000) {
+            override fun onTick(p0: Long) {
+                sayac_basit.text = "Kalan Süre: ${p0 / 1000}"
+            }
+
+            override fun onFinish() {
+                sayac_basit.text = "Süre Bitti!"
+                imageView1.isVisible=false;
+                imageView2.isVisible=false;
+                imageView3.isVisible=false;
+                imageView4.isVisible=false;
+
+                val handler = Handler()
+                handler.postDelayed({ // Do something after 5s = 5000ms
+                    setContentView(R.layout.activity_zorluk_sec)
+                }, 5000)
+            }
+        }.start()
     }
 
     private fun updateViews() {

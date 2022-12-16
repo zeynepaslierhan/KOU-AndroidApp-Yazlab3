@@ -442,18 +442,34 @@
         app:layout_constraintVertical_bias="0.633" />
 
     <TextView
-        android:id="@+id/sayac_zor"
+        android:id="@+id/sayac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Kalan Süre: 60"
-        android:textColor="#939393"
-        android:textSize="16sp"
+        android:textColor="#E6AAAAAA"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintHorizontal_bias="0.777"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.049" />
+
+    <TextView
+        android:id="@+id/puan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Puan: 100"
+        android:textColor="#E6AAAAAA"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.049" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -50,11 +50,11 @@ class OyunBasitActivity : AppCompatActivity() {
 
         object : CountDownTimer(60000,1000) {
             override fun onTick(p0: Long) {
-                sayac_basit.text = "Kalan Süre: ${p0 / 1000}"
+                sayac.text = "Kalan Süre: ${p0 / 1000}"
             }
 
             override fun onFinish() {
-                sayac_basit.text = "Süre Bitti!"
+                sayac.text = "Süre Bitti!"
                 imageView1.isVisible=false;
                 imageView2.isVisible=false;
                 imageView3.isVisible=false;

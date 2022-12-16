@@ -7,12 +7,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import kotlinx.android.synthetic.main.activity_oyunbasit.*
 import kotlinx.android.synthetic.main.activity_oyunorta.*
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView1
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView2
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView3
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView4
 
 class OyunOrtaActivity : AppCompatActivity() {
 
@@ -55,11 +50,11 @@ class OyunOrtaActivity : AppCompatActivity() {
 
         object : CountDownTimer(60000,1000) {
             override fun onTick(p0: Long) {
-                sayac_orta.text = "Kalan Süre: ${p0 / 1000}"
+                sayac.text = "Kalan Süre: ${p0 / 1000}"
             }
 
             override fun onFinish() {
-                sayac_orta.text = "Süre Bitti!"
+                sayac.text = "Süre Bitti!"
                 imageView1.isVisible=false;
                 imageView2.isVisible=false;
                 imageView3.isVisible=false;

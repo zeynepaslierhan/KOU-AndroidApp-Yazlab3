@@ -7,24 +7,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import kotlinx.android.synthetic.main.activity_oyunorta.*
 import kotlinx.android.synthetic.main.activity_oyunzor.*
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView1
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView10
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView11
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView12
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView13
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView14
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView15
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView16
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView2
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView3
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView4
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView5
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView6
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView7
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView8
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView9
 
 class OyunZorActivity : AppCompatActivity() {
     private lateinit var views: List<ImageView>
@@ -73,11 +56,11 @@ class OyunZorActivity : AppCompatActivity() {
 
         object : CountDownTimer(60000,1000) {
             override fun onTick(p0: Long) {
-                sayac_zor.text = "Kalan Süre: ${p0 / 1000}"
+                sayac.text = "Kalan Süre: ${p0 / 1000}"
             }
 
             override fun onFinish() {
-                sayac_zor.text = "Süre Bitti!"
+                sayac.text = "Süre Bitti!"
                 imageView1.isVisible=false; imageView2.isVisible=false; imageView3.isVisible=false; imageView4.isVisible=false;
                 imageView5.isVisible=false; imageView6.isVisible=false; imageView7.isVisible=false; imageView8.isVisible=false;
                 imageView9.isVisible=false; imageView10.isVisible=false; imageView11.isVisible=false; imageView12.isVisible=false;

@@ -64,6 +64,8 @@ class OyunBasitActivity : AppCompatActivity() {
         storageRef.getFile(localfile).addOnSuccessListener{
             val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
 
+            // Bitmapi atama ->     imageid.setImageBitmap(bitmap)
+
         }.addOnFailureListener{
             Log.d(TAG,"Resim alınamadı")
         }

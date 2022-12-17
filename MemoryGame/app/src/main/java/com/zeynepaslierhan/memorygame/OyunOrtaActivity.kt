@@ -77,7 +77,7 @@ class OyunOrtaActivity : AppCompatActivity() {
             }
         }
 
-        object : CountDownTimer(60000,1000) {
+        object : CountDownTimer(45000,1000) {
             override fun onTick(p0: Long) {
                 if(matchCounter == 8)
                 {

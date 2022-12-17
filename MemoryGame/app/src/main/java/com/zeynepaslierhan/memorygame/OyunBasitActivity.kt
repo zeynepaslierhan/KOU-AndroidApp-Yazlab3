@@ -1,17 +1,20 @@
 package com.zeynepaslierhan.memorygame
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.google.firebase.storage.FirebaseStorage
 
 import kotlinx.android.synthetic.main.activity_oyunbasit.*
-
+import java.io.File
 
 private const val TAG = "Basit Test";
 
@@ -55,6 +58,15 @@ class OyunBasitActivity : AppCompatActivity() {
 
         // sırayı randomize ediyor.
         images.shuffle()
+
+        val storageRef = FirebaseStorage.getInstance().reference.child("cards/gryffindor1.png")
+        val localfile = File.createTempFile("tempImage","png")
+        storageRef.getFile(localfile).addOnSuccessListener{
+            val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
+
+        }.addOnFailureListener{
+            Log.d(TAG,"Resim alınamadı")
+        }
 
         views = listOf(imageView1, imageView2, imageView3, imageView4)
 
@@ -168,6 +180,7 @@ class OyunBasitActivity : AppCompatActivity() {
 
             puan = puan + 10
             puanTextView.text = " Puan: ${puan.toString()}"
+
 
             if(matchCounter == 2){
                 MPwin?.start()

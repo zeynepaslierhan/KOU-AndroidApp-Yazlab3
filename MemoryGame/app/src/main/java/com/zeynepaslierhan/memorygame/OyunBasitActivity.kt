@@ -1,6 +1,7 @@
 package com.zeynepaslierhan.memorygame
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -90,6 +91,12 @@ class OyunBasitActivity : AppCompatActivity() {
     }
 
 
+    // Kart Ayarları
+
+    private lateinit var CardsBacground : Bitmap
+    private lateinit var card1 : Bitmap
+    private lateinit var card2 : Bitmap
+
 
     // Tüm kartların eşleşmesi
 
@@ -114,14 +121,22 @@ class OyunBasitActivity : AppCompatActivity() {
         }
     }
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oyunbasit)
 
+        // Sayfa Yapısı
         musicSetting()
         timer()
+        CardsFromFirebase().cardSetting()
 
-        val images = mutableListOf(R.drawable.gryffindor1,R.drawable.hufflepuff1)
+        CardsBacground = CardsFromFirebase().decoded_cardBackground
+        card1 = CardsFromFirebase().decoded_card1
+        card2 = CardsFromFirebase().decoded_card1
+
+        val images = mutableListOf(card1,card2)
 
         // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
         images.addAll(images)
@@ -156,7 +171,7 @@ class OyunBasitActivity : AppCompatActivity() {
             if (card.isMatched) {
                 view.alpha = 0.3f
             }
-            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart)
+            view.setImageBitmap(if (card.isFaceUp) card.identifier else CardsBacground)
         }
     }
 

@@ -1,6 +1,7 @@
 package com.zeynepaslierhan.memorygame
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -9,7 +10,26 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import kotlinx.android.synthetic.main.activity_oyunorta.*
 import kotlinx.android.synthetic.main.activity_oyunzor.*
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView1
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView10
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView11
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView12
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView13
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView14
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView15
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView16
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView2
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView3
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView4
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView5
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView6
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView7
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView8
+import kotlinx.android.synthetic.main.activity_oyunzor.imageView9
+import kotlinx.android.synthetic.main.activity_oyunzor.puanTextView
+import kotlinx.android.synthetic.main.activity_oyunzor.sayac
 
 class OyunZorActivity : AppCompatActivity() {
 
@@ -19,18 +39,14 @@ class OyunZorActivity : AppCompatActivity() {
 
     private var puan : Int = 0
 
+    // Müzik Ayarları
+
     private var MPbacground: MediaPlayer? = null
     private var MPmatch: MediaPlayer? = null
     private var MPwin: MediaPlayer? = null
     private var MPlost: MediaPlayer? = null
 
-    private var matchCounter : Int?=0
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_oyunzor)
-
-
+    fun musicSetting(){
         if (MPbacground == null) {
             MPbacground = MediaPlayer.create(this, R.raw.background)
             MPbacground!!.start()
@@ -44,44 +60,16 @@ class OyunZorActivity : AppCompatActivity() {
         if (MPlost == null) {
             MPlost = MediaPlayer.create(this, R.raw.time_over)
         }
-
-        val images = mutableListOf(R.drawable.gryffindor1,R.drawable.gryffindor2,R.drawable.gryffindor3,
-            R.drawable.gryffindor4,R.drawable.slytherin1,R.drawable.slytherin2, R.drawable.slytherin3,
-            R.drawable.slytherin4, R.drawable.hufflepuff1,R.drawable.hufflepuff2,R.drawable.hufflepuff3,
-            R.drawable.hufflepuff4,R.drawable.ravenclaw1,R.drawable.ravenclaw2, R.drawable.ravenclaw3,
-            R.drawable.ravenclaw4, R.drawable.hufflepuff4,R.drawable.hufflepuff4)
-
-        // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
-        images.addAll(images)
-
-        // sırayı randomize ediyor.
-        images.shuffle()
-
-        views = listOf(imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,
-            imageView7,imageView8,imageView9,imageView10,imageView11,imageView12,
-            imageView13,imageView14,imageView15,imageView16,imageView17,imageView18,
-            imageView19,imageView20,imageView21,imageView22,imageView23,imageView24,
-            imageView25, imageView26,imageView27,imageView28,imageView29,imageView30,
-            imageView31,imageView32,imageView33,imageView34,imageView35,imageView36)
+    }
 
 
-        cards = views.indices.map { index ->
-            MemoryCard(images[index])
-        }
+    // Sayaç ve kalan süre hesapları
 
-        views.forEachIndexed { index, view ->
-            view.setOnClickListener {
+    private var KalanSüre : Long ?=null
 
-                // modelleri güncelleme
-                updateModels(index)
+    fun timer(){
 
-                // UI güncelleme
-                updateViews()
-
-            }
-        }
-
-        object : CountDownTimer(60000,1000) {
+        object : CountDownTimer(45000,1000) {
             override fun onTick(p0: Long) {
                 if(matchCounter == 18)
                 {
@@ -121,6 +109,88 @@ class OyunZorActivity : AppCompatActivity() {
         }.start()
     }
 
+
+    // Kart Ayarları
+
+    private lateinit var CardsBacground : Bitmap
+    private lateinit var card1 : Bitmap
+    private lateinit var card2 : Bitmap
+
+
+    // Tüm kartların eşleşmesi
+
+    private var matchCounter : Int?=0
+
+    fun matchedController(matchedCards:Int){
+        if(matchCounter == matchedCards){
+            MPwin?.start()
+
+            val handler = Handler()
+            handler.postDelayed({ // Do something after 8s = 8000ms
+                val intent = Intent(this@OyunZorActivity,zorluk_secActivity::class.java)
+                startActivity(intent)
+
+                MPbacground?.stop()
+                MPmatch?.stop()
+                MPwin?.stop()
+                finish()
+            }, 8000)
+        }else{
+            MPmatch?.start()
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_oyunzor)
+
+
+        // Sayfa Yapısı
+        musicSetting()
+        timer()
+        CardsFromFirebase().cardSetting()
+
+        CardsBacground = CardsFromFirebase().decoded_cardBackground
+        card1 = CardsFromFirebase().decoded_card1
+        card2 = CardsFromFirebase().decoded_card1
+
+        puanTextView.text = " Puan: ${puan.toString()}"
+
+        val images = mutableListOf(card1,card2,card1,card2,card1,card2,card1,card2,card2,card1,card2,card1,card2,card1,card2,card1)
+
+        // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
+        images.addAll(images)
+
+        // sırayı randomize ediyor.
+        images.shuffle()
+
+        views = listOf(imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,
+            imageView7,imageView8,imageView9,imageView10,imageView11,imageView12,
+            imageView13,imageView14,imageView15,imageView16,imageView17,imageView18,
+            imageView19,imageView20,imageView21,imageView22,imageView23,imageView24,
+            imageView25, imageView26,imageView27,imageView28,imageView29,imageView30,
+            imageView31,imageView32,imageView33,imageView34,imageView35,imageView36)
+
+
+        cards = views.indices.map { index ->
+            MemoryCard(images[index])
+        }
+
+        views.forEachIndexed { index, view ->
+            view.setOnClickListener {
+
+                // modelleri güncelleme
+                updateModels(index)
+
+                // UI güncelleme
+                updateViews()
+
+            }
+        }
+
+
+    }
+
     private fun updateViews() {
         cards.forEachIndexed { index, card ->
 
@@ -128,7 +198,7 @@ class OyunZorActivity : AppCompatActivity() {
             if (card.isMatched) {
                 view.alpha = 0.3f
             }
-            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart)
+            view.setImageBitmap(if (card.isFaceUp) card.identifier else CardsBacground)
         }
     }
 
@@ -179,22 +249,7 @@ class OyunZorActivity : AppCompatActivity() {
             cards[position1].isMatched = true
             cards[position2].isMatched = true
 
-            if(matchCounter == 18){
-                MPwin?.start()
-
-                val handler = Handler()
-                handler.postDelayed({ // Do something after 8s = 8000ms
-                    val intent = Intent(this@OyunZorActivity,zorluk_secActivity::class.java)
-                    startActivity(intent)
-
-                    MPbacground?.stop()
-                    MPmatch?.stop()
-                    MPwin?.stop()
-                    finish()
-                }, 8000)
-            }else{
-                MPmatch?.start()
-            }
+            matchedController(16)
 
         }
     }

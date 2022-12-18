@@ -1,6 +1,7 @@
 package com.zeynepaslierhan.memorygame
 
 import android.content.Intent
+import android.graphics.Bitmap
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -9,7 +10,14 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import kotlinx.android.synthetic.main.activity_oyunbasit.*
 import kotlinx.android.synthetic.main.activity_oyunorta.*
+import kotlinx.android.synthetic.main.activity_oyunorta.imageView1
+import kotlinx.android.synthetic.main.activity_oyunorta.imageView2
+import kotlinx.android.synthetic.main.activity_oyunorta.imageView3
+import kotlinx.android.synthetic.main.activity_oyunorta.imageView4
+import kotlinx.android.synthetic.main.activity_oyunorta.puanTextView
+import kotlinx.android.synthetic.main.activity_oyunorta.sayac
 
 class OyunOrtaActivity : AppCompatActivity() {
 
@@ -19,19 +27,14 @@ class OyunOrtaActivity : AppCompatActivity() {
 
     private var puan : Int = 0
 
+    // Müzik Ayarları
+
     private var MPbacground: MediaPlayer? = null
     private var MPmatch: MediaPlayer? = null
     private var MPwin: MediaPlayer? = null
     private var MPlost: MediaPlayer? = null
 
-    private var matchCounter : Int?=0
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_oyunorta)
-
-
+    fun musicSetting(){
         if (MPbacground == null) {
             MPbacground = MediaPlayer.create(this, R.raw.background)
             MPbacground!!.start()
@@ -45,56 +48,33 @@ class OyunOrtaActivity : AppCompatActivity() {
         if (MPlost == null) {
             MPlost = MediaPlayer.create(this, R.raw.time_over)
         }
+    }
 
-        puanTextView.text = " Puan: ${puan.toString()}"
 
-        val images = mutableListOf(R.drawable.gryffindor1,R.drawable.hufflepuff1,R.drawable.gryffindor3,
-            R.drawable.slytherin2,R.drawable.slytherin3,R.drawable.ravenclaw1,
-            R.drawable.ravenclaw4, R.drawable.gryffindor2)
+    // Sayaç ve kalan süre hesapları
 
-        // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
-        images.addAll(images)
+    private var KalanSüre : Long ?=null
 
-        // sırayı randomize ediyor.
-        images.shuffle()
+    fun timer(){
 
-        views = listOf(imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,imageView7,imageView8,imageView9,
-            imageView10,imageView11,imageView12,imageView13,imageView14,imageView15,imageView16)
-
-        cards = views.indices.map { index ->
-            MemoryCard(images[index])
-        }
-
-        views.forEachIndexed { index, view ->
-            view.setOnClickListener {
-
-                // modelleri güncelleme
-                updateModels(index)
-
-                // UI güncelleme
-                updateViews()
-
-            }
-        }
-
-        object : CountDownTimer(60000,1000) {
-            override fun onTick(p0: Long) {
-                if(matchCounter == 8)
+        object : CountDownTimer(45000,1000) {
+            override fun onTick(time: Long) {
+                KalanSüre= time
+                if(matchCounter == 2)
                 {
                     sayac.text = "Tebrikler!!!"
                 }else{
-                    sayac.text = "Kalan Süre: ${p0 / 1000}"
+                    sayac.text = "Kalan Süre: ${time / 1000}"
                 }
             }
 
             override fun onFinish() {
 
-                if(matchCounter != 8)
+                if(matchCounter != 2)
                 {
                     MPlost?.start()
 
                     sayac.text = "Süre Bitti!"
-
 
                     imageView1.isVisible=false;
                     imageView2.isVisible=false;
@@ -124,6 +104,81 @@ class OyunOrtaActivity : AppCompatActivity() {
                 }, 5000)
             }
         }.start()
+    }
+
+
+    // Kart Ayarları
+
+    private lateinit var CardsBacground : Bitmap
+    private lateinit var card1 : Bitmap
+    private lateinit var card2 : Bitmap
+
+
+    // Tüm kartların eşleşmesi
+
+    private var matchCounter : Int?=0
+
+    fun matchedController(matchedCards:Int){
+        if(matchCounter == matchedCards){
+            MPwin?.start()
+
+            val handler = Handler()
+            handler.postDelayed({ // Do something after 8s = 8000ms
+                val intent = Intent(this@OyunOrtaActivity,zorluk_secActivity::class.java)
+                startActivity(intent)
+
+                MPbacground?.stop()
+                MPmatch?.stop()
+                MPwin?.stop()
+                finish()
+            }, 8000)
+        }else{
+            MPmatch?.start()
+        }
+    }
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_oyunorta)
+
+        // Sayfa Yapısı
+        musicSetting()
+        timer()
+        CardsFromFirebase().cardSetting()
+
+        CardsBacground = CardsFromFirebase().decoded_cardBackground
+        card1 = CardsFromFirebase().decoded_card1
+        card2 = CardsFromFirebase().decoded_card1
+
+        puanTextView.text = " Puan: ${puan.toString()}"
+
+        val images = mutableListOf(card1,card2,card1,card2,card1,card2,card1,card2)
+
+        // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
+        images.addAll(images)
+
+        // sırayı randomize ediyor.
+        images.shuffle()
+
+        views = listOf(imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,imageView7,imageView8,imageView9,
+            imageView10,imageView11,imageView12,imageView13,imageView14,imageView15,imageView16)
+
+        cards = views.indices.map { index ->
+            MemoryCard(images[index])
+        }
+
+        views.forEachIndexed { index, view ->
+            view.setOnClickListener {
+
+                // modelleri güncelleme
+                updateModels(index)
+
+                // UI güncelleme
+                updateViews()
+
+            }
+        }
 
     }
 
@@ -134,7 +189,7 @@ class OyunOrtaActivity : AppCompatActivity() {
             if (card.isMatched) {
                 view.alpha = 0.3f
             }
-            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart)
+            view.setImageBitmap(if (card.isFaceUp) card.identifier else CardsBacground)
         }
     }
 
@@ -185,25 +240,9 @@ class OyunOrtaActivity : AppCompatActivity() {
             puan = puan + 10
             puanTextView.text = " Puan: ${puan.toString()}"
 
-            if(matchCounter == 8){
-                MPwin?.start()
-                val handler = Handler()
-                handler.postDelayed({ // Do something after 8s = 8000ms
-                    val intent = Intent(this@OyunOrtaActivity,zorluk_secActivity::class.java)
-                    startActivity(intent)
-
-                    MPbacground?.stop()
-                    MPmatch?.stop()
-                    MPwin?.stop()
-                    finish()
-                }, 8000)
-            }else{
-                MPmatch?.start()
-            }
+            matchedController(8)
         }
     }
-
-
 
     override fun onBackPressed() {
         super.onBackPressed()

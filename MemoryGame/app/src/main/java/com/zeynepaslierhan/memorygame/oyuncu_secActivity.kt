@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ProgressBar
 import com.google.firebase.auth.FirebaseAuth
 
 class oyuncu_secActivity : AppCompatActivity() {
@@ -17,6 +18,7 @@ class oyuncu_secActivity : AppCompatActivity() {
         setContentView(R.layout.activity_oyuncu_sec)
 
         auth= FirebaseAuth.getInstance()
+
     }
 
     fun single(view: View){

@@ -19,7 +19,7 @@ class zorluk_secActivity : AppCompatActivity() {
     }
 
     fun basicGame(view: View){
-        val intent = Intent(this,OyunBasitActivity::class.java)
+        val intent = Intent(this,BasitLoadingScreenActivity::class.java)
         startActivity(intent)
     }
     fun intermediateGame(view: View){

@@ -14,7 +14,7 @@ class ProgressBarAnimation (
     var textView: TextView,
     var from: Float,
     var to: Float,
-    var activity: Int,
+    var activity: String,
 ) :Animation()
 
 {
@@ -24,15 +24,15 @@ class ProgressBarAnimation (
         progressBar.progress = value.toInt()
         textView.text = "Oyun Yükleniyor  ${value.toInt()} %"
 
-        if (value == to && activity == 1){
+        if (value == to && activity == "1"){
             context.startActivity(Intent(context,OyunBasitActivity::class.java))
         }
 
-        if (value == to && activity == 2){
+        if (value == to && activity == "2"){
             context.startActivity(Intent(context,OyunOrtaActivity::class.java))
         }
 
-        if (value == to && activity == 3){
+        if (value == to && activity == "3"){
             context.startActivity(Intent(context,OyunZorActivity::class.java))
         }
     }

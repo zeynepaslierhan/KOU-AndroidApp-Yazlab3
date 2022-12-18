@@ -10,8 +10,6 @@ import com.google.firebase.auth.FirebaseAuth
 
 class zorluk_secActivity : AppCompatActivity() {
 
-    var selected_activity :Int = 0
-
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,17 +20,17 @@ class zorluk_secActivity : AppCompatActivity() {
 
     fun basicGame(view: View){
         val intent = Intent(this,BasitLoadingScreenActivity::class.java)
-        selected_activity=1
+        intent.putExtra("activity","1")
         startActivity(intent)
     }
     fun intermediateGame(view: View){
         val intent = Intent(this,BasitLoadingScreenActivity::class.java)
-        selected_activity=2
+        intent.putExtra("activity","2")
         startActivity(intent)
     }
     fun hardGame(view: View){
         val intent = Intent(this,BasitLoadingScreenActivity::class.java)
-        selected_activity=3
+        intent.putExtra("activity","3")
         startActivity(intent)
     }
 

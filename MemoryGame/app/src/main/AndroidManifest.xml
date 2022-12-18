@@ -15,20 +15,6 @@
         android:theme="@style/Theme.MemoryGame"
         tools:targetApi="31">
         <activity
-            android:name=".ZorLoadingScreenActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".OrtaLoadingScreenActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".BasitLoadingScreenActivity"
             android:exported="false">
             <meta-data

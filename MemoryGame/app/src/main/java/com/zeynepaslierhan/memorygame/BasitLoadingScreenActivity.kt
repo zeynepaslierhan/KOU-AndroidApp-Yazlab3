@@ -13,7 +13,8 @@ class BasitLoadingScreenActivity : AppCompatActivity() {
 
         val progressBar = findViewById<ProgressBar>(R.id.progress_bar)
         val textView = findViewById<TextView>(R.id.textView)
-        val activity = 1;
+        val selected = zorluk_secActivity()
+        val activity = selected.selected_activity
 
         progressBar.max = 100
         progressBar.scaleY = 3F

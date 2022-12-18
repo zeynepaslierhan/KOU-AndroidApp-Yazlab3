@@ -10,26 +10,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import kotlinx.android.synthetic.main.activity_oyunorta.*
 import kotlinx.android.synthetic.main.activity_oyunzor.*
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView1
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView10
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView11
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView12
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView13
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView14
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView15
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView16
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView2
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView3
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView4
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView5
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView6
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView7
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView8
-import kotlinx.android.synthetic.main.activity_oyunzor.imageView9
-import kotlinx.android.synthetic.main.activity_oyunzor.puanTextView
-import kotlinx.android.synthetic.main.activity_oyunzor.sayac
 
 class OyunZorActivity : AppCompatActivity() {
 

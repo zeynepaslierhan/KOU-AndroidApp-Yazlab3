@@ -23,11 +23,11 @@ class zorluk_secActivity : AppCompatActivity() {
         startActivity(intent)
     }
     fun intermediateGame(view: View){
-        val intent = Intent(this,OyunOrtaActivity::class.java)
+        val intent = Intent(this,OrtaLoadingScreenActivity::class.java)
         startActivity(intent)
     }
     fun hardGame(view: View){
-        val intent = Intent(this,OyunZorActivity::class.java)
+        val intent = Intent(this,ZorLoadingScreenActivity::class.java)
         startActivity(intent)
     }
 

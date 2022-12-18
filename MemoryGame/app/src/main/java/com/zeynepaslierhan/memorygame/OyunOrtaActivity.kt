@@ -10,14 +10,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import kotlinx.android.synthetic.main.activity_oyunbasit.*
 import kotlinx.android.synthetic.main.activity_oyunorta.*
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView1
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView2
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView3
-import kotlinx.android.synthetic.main.activity_oyunorta.imageView4
-import kotlinx.android.synthetic.main.activity_oyunorta.puanTextView
-import kotlinx.android.synthetic.main.activity_oyunorta.sayac
 
 class OyunOrtaActivity : AppCompatActivity() {
 

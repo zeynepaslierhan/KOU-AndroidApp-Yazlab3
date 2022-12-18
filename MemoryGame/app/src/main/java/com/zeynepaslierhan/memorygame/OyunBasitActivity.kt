@@ -130,11 +130,13 @@ class OyunBasitActivity : AppCompatActivity() {
         // Sayfa Yapısı
         musicSetting()
         timer()
-        CardsFromFirebase().cardSetting()
 
-        CardsBacground = CardsFromFirebase().decoded_cardBackground
-        card1 = CardsFromFirebase().decoded_card1
-        card2 = CardsFromFirebase().decoded_card1
+        val cardSet = CardsFromFirebase()
+
+        cardSet.cardSetting()
+        CardsBacground = cardSet.decoded_cardBackground
+        card1 = cardSet.decoded_card1
+        card2 = cardSet.decoded_card1
 
         val images = mutableListOf(card1,card2)
 

@@ -23,17 +23,14 @@ class OyunBasitActivity : AppCompatActivity() {
 
     private var puan : Int = 0
 
+    // Müzik Ayarları
+
     private var MPbacground: MediaPlayer? = null
     private var MPmatch: MediaPlayer? = null
     private var MPwin: MediaPlayer? = null
     private var MPlost: MediaPlayer? = null
 
-    private var matchCounter : Int?=0
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_oyunbasit)
-
+    fun musicSetting(){
         if (MPbacground == null) {
             MPbacground = MediaPlayer.create(this, R.raw.background)
             MPbacground!!.start()
@@ -47,35 +44,18 @@ class OyunBasitActivity : AppCompatActivity() {
         if (MPlost == null) {
             MPlost = MediaPlayer.create(this, R.raw.time_over)
         }
+    }
 
-        val images = mutableListOf(R.drawable.gryffindor1,R.drawable.hufflepuff1)
 
-        // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
-        images.addAll(images)
+    // Sayaç ve kalan süre hesapları
 
-        // sırayı randomize ediyor.
-        images.shuffle()
+    private var KalanSüre : Long ?=null
 
-        views = listOf(imageView1, imageView2, imageView3, imageView4)
+    fun timer(){
 
-        cards = views.indices.map { index ->
-            MemoryCard(images[index])
-        }
-
-        views.forEachIndexed { index, view ->
-            view.setOnClickListener {
-
-                // modelleri güncelleme
-                updateModels(index)
-
-                // UI güncelleme
-                updateViews()
-
-            }
-        }
-
-        object : CountDownTimer(60000,1000) {
+        object : CountDownTimer(45000,1000) {
             override fun onTick(time: Long) {
+                KalanSüre= time
                 if(matchCounter == 2)
                 {
                     sayac.text = "Tebrikler!!!"
@@ -107,6 +87,66 @@ class OyunBasitActivity : AppCompatActivity() {
                 }, 5000)
             }
         }.start()
+    }
+
+
+
+    // Tüm kartların eşleşmesi
+
+    private var matchCounter : Int?=0
+
+    fun matchedController(matchedCards:Int){
+        if(matchCounter == matchedCards){
+            MPwin?.start()
+
+            val handler = Handler()
+            handler.postDelayed({ // Do something after 8s = 8000ms
+                val intent = Intent(this@OyunBasitActivity,zorluk_secActivity::class.java)
+                startActivity(intent)
+
+                MPbacground?.stop()
+                MPmatch?.stop()
+                MPwin?.stop()
+                finish()
+            }, 8000)
+        }else{
+            MPmatch?.start()
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_oyunbasit)
+
+        musicSetting()
+        timer()
+
+        val images = mutableListOf(R.drawable.gryffindor1,R.drawable.hufflepuff1)
+
+        // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
+        images.addAll(images)
+
+        // sırayı randomize ediyor.
+        images.shuffle()
+
+        views = listOf(imageView1, imageView2, imageView3, imageView4)
+
+        cards = views.indices.map { index ->
+            MemoryCard(images[index])
+        }
+
+        views.forEachIndexed { index, view ->
+            view.setOnClickListener {
+
+                // modelleri güncelleme
+                updateModels(index)
+
+                // UI güncelleme
+                updateViews()
+
+            }
+        }
+
     }
 
     private fun updateViews() {
@@ -169,22 +209,7 @@ class OyunBasitActivity : AppCompatActivity() {
             puan = puan + 10
             puanTextView.text = " Puan: ${puan.toString()}"
 
-            if(matchCounter == 2){
-                MPwin?.start()
-
-                val handler = Handler()
-                handler.postDelayed({ // Do something after 8s = 8000ms
-                    val intent = Intent(this@OyunBasitActivity,zorluk_secActivity::class.java)
-                    startActivity(intent)
-
-                    MPbacground?.stop()
-                    MPmatch?.stop()
-                    MPwin?.stop()
-                    finish()
-                }, 8000)
-            }else{
-                MPmatch?.start()
-            }
+            matchedController(2)
         }
     }
 

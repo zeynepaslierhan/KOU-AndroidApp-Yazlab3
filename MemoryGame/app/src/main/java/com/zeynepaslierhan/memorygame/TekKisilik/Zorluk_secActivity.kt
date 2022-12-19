@@ -5,16 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.util.Log
 import android.view.View
 import com.google.firebase.auth.FirebaseAuth
 import com.zeynepaslierhan.memorygame.Menu.MainActivity
-import com.zeynepaslierhan.memorygame.Menu.oyuncu_secActivity
 import com.zeynepaslierhan.memorygame.R
 import com.zeynepaslierhan.memorygame.Splash.BasitLoadingScreenActivity
 
 class zorluk_secActivity : AppCompatActivity() {
-
+    private var TAG = "Test"
     private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_zorluk_sec)
@@ -22,22 +23,37 @@ class zorluk_secActivity : AppCompatActivity() {
         auth= FirebaseAuth.getInstance()
     }
 
-    var selected = oyuncu_secActivity().tf
-
-
     fun basicGame(view: View){
         val intent = Intent(this, BasitLoadingScreenActivity::class.java)
-        intent.putExtra("activity",if (selected) "1" else "4")
+
+        var sample = false
+        sample = intent.getBooleanExtra("sample", sample)
+        intent.putExtra("activity",if (sample) "1" else "4")
+
+        Log.d(TAG,"${sample}")
+
         startActivity(intent)
     }
     fun intermediateGame(view: View){
         val intent = Intent(this, BasitLoadingScreenActivity::class.java)
-        intent.putExtra("activity",if (selected) "2" else "5")
+
+        var sample = false
+        sample = intent.getBooleanExtra("sample", sample)
+        intent.putExtra("activity",if (sample) "2" else "5")
+
+        Log.d(TAG,"${sample}")
+
         startActivity(intent)
     }
     fun hardGame(view: View){
         val intent = Intent(this, BasitLoadingScreenActivity::class.java)
-        intent.putExtra("activity",if (selected) "3" else "6")
+
+        var sample = false
+        sample = intent.getBooleanExtra("sample", sample)
+        intent.putExtra("activity",if (sample) "3" else "6")
+
+        Log.d(TAG,"${sample}")
+
         startActivity(intent)
     }
 

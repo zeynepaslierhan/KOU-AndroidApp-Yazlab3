@@ -1,11 +1,11 @@
 package com.zeynepaslierhan.memorygame.Menu
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.zeynepaslierhan.memorygame.Kartlar.CardsFromFirebase
 import com.zeynepaslierhan.memorygame.R
@@ -16,8 +16,6 @@ class oyuncu_secActivity : AppCompatActivity() {
     private lateinit var auth:FirebaseAuth
 
     var cards = CardsFromFirebase()
-
-    var tf : Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,10 +29,18 @@ class oyuncu_secActivity : AppCompatActivity() {
 
     fun single(view: View){
         val intent = Intent(this, zorluk_secActivity::class.java)
+
+        val tfintent = Intent(this, zorluk_secActivity::class.java)
+        tfintent.putExtra("sample", true)
+
         startActivity(intent)
     }
     fun multiplayer(view: View){
         val intent = Intent(this,zorluk_secActivity::class.java)
+
+        val tfintent = Intent(this, zorluk_secActivity::class.java)
+        tfintent.putExtra("sample", false)
+
         startActivity(intent)
     }
 

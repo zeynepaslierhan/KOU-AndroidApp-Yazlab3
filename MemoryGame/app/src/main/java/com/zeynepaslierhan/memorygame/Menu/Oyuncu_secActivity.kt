@@ -17,6 +17,8 @@ class oyuncu_secActivity : AppCompatActivity() {
 
     var cards = CardsFromFirebase()
 
+    var tf : Boolean = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oyuncu_sec)
@@ -32,8 +34,8 @@ class oyuncu_secActivity : AppCompatActivity() {
         startActivity(intent)
     }
     fun multiplayer(view: View){
-        //val intent = Intent(this,zorluk_secActivity::class.java)
-        //startActivity(intent)
+        val intent = Intent(this,zorluk_secActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

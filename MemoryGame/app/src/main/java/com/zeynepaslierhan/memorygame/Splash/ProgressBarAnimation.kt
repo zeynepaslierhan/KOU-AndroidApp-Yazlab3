@@ -6,6 +6,9 @@ import android.view.animation.Animation
 import android.view.animation.Transformation
 import android.widget.ProgressBar
 import android.widget.TextView
+import com.zeynepaslierhan.memorygame.Multi.MultiBasitActivity
+import com.zeynepaslierhan.memorygame.Multi.MultiOrtaActivity
+import com.zeynepaslierhan.memorygame.Multi.MultiZorActivity
 import com.zeynepaslierhan.memorygame.TekKisilik.OyunBasitActivity
 import com.zeynepaslierhan.memorygame.TekKisilik.OyunOrtaActivity
 import com.zeynepaslierhan.memorygame.TekKisilik.OyunZorActivity
@@ -37,6 +40,18 @@ class ProgressBarAnimation (
 
         if (value == to && activity == "3"){
             context.startActivity(Intent(context, OyunZorActivity::class.java))
+        }
+
+        if (value == to && activity == "4"){
+            context.startActivity(Intent(context, MultiBasitActivity::class.java))
+        }
+
+        if (value == to && activity == "5"){
+            context.startActivity(Intent(context, MultiOrtaActivity::class.java))
+        }
+
+        if (value == to && activity == "6"){
+            context.startActivity(Intent(context, MultiZorActivity::class.java))
         }
     }
 }

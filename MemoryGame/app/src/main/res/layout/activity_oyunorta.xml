@@ -205,7 +205,7 @@
         android:id="@+id/sayac"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kalan Süre: 60"
+        android:text="Kalan Süre: 45"
         android:textColor="#E6AAAAAA"
         android:textSize="20sp"
         android:textStyle="bold"

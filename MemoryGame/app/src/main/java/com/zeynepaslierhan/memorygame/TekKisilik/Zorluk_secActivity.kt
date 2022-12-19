@@ -8,6 +8,7 @@ import android.view.MenuItem
 import android.view.View
 import com.google.firebase.auth.FirebaseAuth
 import com.zeynepaslierhan.memorygame.Menu.MainActivity
+import com.zeynepaslierhan.memorygame.Menu.oyuncu_secActivity
 import com.zeynepaslierhan.memorygame.R
 import com.zeynepaslierhan.memorygame.Splash.BasitLoadingScreenActivity
 
@@ -21,19 +22,22 @@ class zorluk_secActivity : AppCompatActivity() {
         auth= FirebaseAuth.getInstance()
     }
 
+    var selected = oyuncu_secActivity().tf
+
+
     fun basicGame(view: View){
         val intent = Intent(this, BasitLoadingScreenActivity::class.java)
-        intent.putExtra("activity","1")
+        intent.putExtra("activity",if (selected) "1" else "4")
         startActivity(intent)
     }
     fun intermediateGame(view: View){
         val intent = Intent(this, BasitLoadingScreenActivity::class.java)
-        intent.putExtra("activity","2")
+        intent.putExtra("activity",if (selected) "2" else "5")
         startActivity(intent)
     }
     fun hardGame(view: View){
         val intent = Intent(this, BasitLoadingScreenActivity::class.java)
-        intent.putExtra("activity","3")
+        intent.putExtra("activity",if (selected) "3" else "6")
         startActivity(intent)
     }
 

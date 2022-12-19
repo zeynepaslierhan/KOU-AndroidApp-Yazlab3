@@ -10,7 +10,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.zeynepaslierhan.memorygame.CardsFromFirebase
+import com.zeynepaslierhan.memorygame.Kartlar.CardsFromFirebase
 import com.zeynepaslierhan.memorygame.Kartlar.MemoryCard
 import com.zeynepaslierhan.memorygame.R
 import kotlinx.android.synthetic.main.activity_oyunzor.*

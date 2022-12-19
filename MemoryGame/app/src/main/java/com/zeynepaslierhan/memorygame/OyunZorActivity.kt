@@ -142,7 +142,7 @@ class OyunZorActivity : AppCompatActivity() {
 
         puanTextView.text = " Puan: ${puan.toString()}"
 
-        val images = mutableListOf(card1,card2,card1,card2,card1,card2,card1,card2,card2,card1,card2,card1,card2,card1,card2,card1)
+        val images = mutableListOf(card1,card2,card1,card2,card1,card2,card1,card2,card2,card1,card2,card1,card2,card1,card2,card1,card2,card1)
 
         // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
         images.addAll(images)

@@ -1,4 +1,4 @@
-package com.zeynepaslierhan.memorygame
+package com.zeynepaslierhan.memorygame.Kartlar
 
 import android.graphics.Bitmap
 

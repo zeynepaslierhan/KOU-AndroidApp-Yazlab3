@@ -1,4 +1,4 @@
-package com.zeynepaslierhan.memorygame
+package com.zeynepaslierhan.memorygame.Menu
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,9 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.ProgressBar
 import com.google.firebase.auth.FirebaseAuth
+import com.zeynepaslierhan.memorygame.R
+import com.zeynepaslierhan.memorygame.TekKisilik.zorluk_secActivity
 
 class oyuncu_secActivity : AppCompatActivity() {
 
@@ -22,7 +23,7 @@ class oyuncu_secActivity : AppCompatActivity() {
     }
 
     fun single(view: View){
-        val intent = Intent(this,zorluk_secActivity::class.java)
+        val intent = Intent(this, zorluk_secActivity::class.java)
         startActivity(intent)
     }
     fun multiplayer(view: View){

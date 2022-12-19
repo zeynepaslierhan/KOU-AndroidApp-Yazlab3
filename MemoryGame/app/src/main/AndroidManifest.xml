@@ -15,49 +15,49 @@
         android:theme="@style/Theme.MemoryGame"
         tools:targetApi="31">
         <activity
-            android:name=".BasitLoadingScreenActivity"
+            android:name=".Splash.BasitLoadingScreenActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".zorluk_secActivity"
+            android:name=".TekKisilik.zorluk_secActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".oyuncu_secActivity"
+            android:name=".Menu.oyuncu_secActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".OyunZorActivity"
+            android:name=".TekKisilik.OyunZorActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".OyunOrtaActivity"
+            android:name=".TekKisilik.OyunOrtaActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".OyunBasitActivity"
+            android:name=".TekKisilik.OyunBasitActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".Menu.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

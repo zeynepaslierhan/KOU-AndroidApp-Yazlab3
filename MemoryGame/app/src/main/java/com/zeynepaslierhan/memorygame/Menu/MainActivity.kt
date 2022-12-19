@@ -1,4 +1,4 @@
-package com.zeynepaslierhan.memorygame
+package com.zeynepaslierhan.memorygame.Menu
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.zeynepaslierhan.memorygame.R
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val user = auth.currentUser
         if(user!=null){
 
-            val intent =Intent(this,oyuncu_secActivity::class.java)
+            val intent =Intent(this, oyuncu_secActivity::class.java)
 
             val usermail = user.email.toString()
             Toast.makeText(this,"Welcome: ${usermail}",Toast.LENGTH_LONG).show()
@@ -44,7 +45,7 @@ class MainActivity : AppCompatActivity() {
 
                 Toast.makeText(this,"Welcome: ${user}",Toast.LENGTH_LONG).show()
 
-                val intent = Intent(this,oyuncu_secActivity::class.java)
+                val intent = Intent(this, oyuncu_secActivity::class.java)
                 startActivity(intent)
                 finish()
             }
@@ -65,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
                 Toast.makeText(this,"Register is successfull: ${user}",Toast.LENGTH_LONG).show()
 
-                val intent = Intent(this,oyuncu_secActivity::class.java)
+                val intent = Intent(this, oyuncu_secActivity::class.java)
                 startActivity(intent)
                 finish()
             }

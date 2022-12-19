@@ -1,4 +1,4 @@
-package com.zeynepaslierhan.memorygame
+package com.zeynepaslierhan.memorygame.TekKisilik
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +7,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.google.firebase.auth.FirebaseAuth
+import com.zeynepaslierhan.memorygame.Menu.MainActivity
+import com.zeynepaslierhan.memorygame.R
+import com.zeynepaslierhan.memorygame.Splash.BasitLoadingScreenActivity
 
 class zorluk_secActivity : AppCompatActivity() {
 
@@ -19,17 +22,17 @@ class zorluk_secActivity : AppCompatActivity() {
     }
 
     fun basicGame(view: View){
-        val intent = Intent(this,BasitLoadingScreenActivity::class.java)
+        val intent = Intent(this, BasitLoadingScreenActivity::class.java)
         intent.putExtra("activity","1")
         startActivity(intent)
     }
     fun intermediateGame(view: View){
-        val intent = Intent(this,BasitLoadingScreenActivity::class.java)
+        val intent = Intent(this, BasitLoadingScreenActivity::class.java)
         intent.putExtra("activity","2")
         startActivity(intent)
     }
     fun hardGame(view: View){
-        val intent = Intent(this,BasitLoadingScreenActivity::class.java)
+        val intent = Intent(this, BasitLoadingScreenActivity::class.java)
         intent.putExtra("activity","3")
         startActivity(intent)
     }
@@ -45,7 +48,7 @@ class zorluk_secActivity : AppCompatActivity() {
 
             auth.signOut()
 
-            val intent = Intent(this,MainActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

@@ -1,4 +1,4 @@
-package com.zeynepaslierhan.memorygame
+package com.zeynepaslierhan.memorygame.TekKisilik
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -10,9 +10,12 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import kotlinx.android.synthetic.main.activity_oyunorta.*
+import com.zeynepaslierhan.memorygame.CardsFromFirebase
+import com.zeynepaslierhan.memorygame.Kartlar.MemoryCard
+import com.zeynepaslierhan.memorygame.R
+import kotlinx.android.synthetic.main.activity_oyunzor.*
 
-class OyunOrtaActivity : AppCompatActivity() {
+class OyunZorActivity : AppCompatActivity() {
 
     private lateinit var views: List<ImageView>
     private lateinit var cards: List<MemoryCard>
@@ -51,45 +54,36 @@ class OyunOrtaActivity : AppCompatActivity() {
     fun timer(){
 
         object : CountDownTimer(45000,1000) {
-            override fun onTick(time: Long) {
-                KalanSüre= time
-                if(matchCounter == 2)
+            override fun onTick(p0: Long) {
+                if(matchCounter == 18)
                 {
                     sayac.text = "Tebrikler!!!"
                 }else{
-                    sayac.text = "Kalan Süre: ${time / 1000}"
+                    sayac.text = "Kalan Süre: ${p0 / 1000}"
                 }
             }
 
             override fun onFinish() {
-
-                if(matchCounter != 2)
+                if(matchCounter != 8)
                 {
                     MPlost?.start()
 
                     sayac.text = "Süre Bitti!"
 
-                    imageView1.isVisible=false;
-                    imageView2.isVisible=false;
-                    imageView3.isVisible=false;
-                    imageView4.isVisible=false;
-                    imageView5.isVisible=false;
-                    imageView6.isVisible=false;
-                    imageView7.isVisible=false;
-                    imageView8.isVisible=false;
-                    imageView9.isVisible=false;
-                    imageView10.isVisible=false;
-                    imageView11.isVisible=false;
-                    imageView12.isVisible=false;
-                    imageView13.isVisible=false;
-                    imageView14.isVisible=false;
-                    imageView15.isVisible=false;
-                    imageView16.isVisible=false;
-                }
+                    imageView1.isVisible=false; imageView2.isVisible=false; imageView3.isVisible=false; imageView4.isVisible=false;
+                    imageView5.isVisible=false; imageView6.isVisible=false; imageView7.isVisible=false; imageView8.isVisible=false;
+                    imageView9.isVisible=false; imageView10.isVisible=false; imageView11.isVisible=false; imageView12.isVisible=false;
+                    imageView13.isVisible=false; imageView14.isVisible=false; imageView15.isVisible=false; imageView16.isVisible=false;
+                    imageView17.isVisible=false; imageView18.isVisible=false; imageView19.isVisible=false; imageView20.isVisible=false;
+                    imageView21.isVisible=false; imageView22.isVisible=false; imageView23.isVisible=false; imageView24.isVisible=false;
+                    imageView25.isVisible=false; imageView26.isVisible=false; imageView27.isVisible=false; imageView28.isVisible=false;
+                    imageView29.isVisible=false; imageView30.isVisible=false; imageView31.isVisible=false; imageView32.isVisible=false;
+                    imageView33.isVisible=false; imageView34.isVisible=false; imageView35.isVisible=false; imageView36.isVisible=false;
 
+                }
                 val handler = Handler()
                 handler.postDelayed({ // Do something after 5s = 5000ms
-                    val intent = Intent(this@OyunOrtaActivity,zorluk_secActivity::class.java)
+                    val intent = Intent(this@OyunZorActivity, zorluk_secActivity::class.java)
                     startActivity(intent)
 
                     MPbacground?.stop()
@@ -117,7 +111,7 @@ class OyunOrtaActivity : AppCompatActivity() {
 
             val handler = Handler()
             handler.postDelayed({ // Do something after 8s = 8000ms
-                val intent = Intent(this@OyunOrtaActivity,zorluk_secActivity::class.java)
+                val intent = Intent(this@OyunZorActivity, zorluk_secActivity::class.java)
                 startActivity(intent)
 
                 MPbacground?.stop()
@@ -130,15 +124,16 @@ class OyunOrtaActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_oyunorta)
+        setContentView(R.layout.activity_oyunzor)
+
 
         // Sayfa Yapısı
         musicSetting()
         timer()
         CardsFromFirebase().cardSetting()
+
 
         val cardSet = CardsFromFirebase()
 
@@ -150,7 +145,7 @@ class OyunOrtaActivity : AppCompatActivity() {
 
         puanTextView.text = " Puan: ${puan.toString()}"
 
-        val images = mutableListOf(card1,card2,card1,card2,card1,card2,card1,card2)
+        val images = mutableListOf(card1,card2,card1,card2,card1,card2,card1,card2,card2,card1,card2,card1,card2,card1,card2,card1,card2,card1)
 
         // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
         images.addAll(images)
@@ -158,8 +153,13 @@ class OyunOrtaActivity : AppCompatActivity() {
         // sırayı randomize ediyor.
         images.shuffle()
 
-        views = listOf(imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,imageView7,imageView8,imageView9,
-            imageView10,imageView11,imageView12,imageView13,imageView14,imageView15,imageView16)
+        views = listOf(imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,
+            imageView7,imageView8,imageView9,imageView10,imageView11,imageView12,
+            imageView13,imageView14,imageView15,imageView16,imageView17,imageView18,
+            imageView19,imageView20,imageView21,imageView22,imageView23,imageView24,
+            imageView25, imageView26,imageView27,imageView28,imageView29,imageView30,
+            imageView31,imageView32,imageView33,imageView34,imageView35,imageView36)
+
 
         cards = views.indices.map { index ->
             MemoryCard(images[index])
@@ -176,6 +176,7 @@ class OyunOrtaActivity : AppCompatActivity() {
 
             }
         }
+
 
     }
 
@@ -230,16 +231,18 @@ class OyunOrtaActivity : AppCompatActivity() {
 
             matchCounter = matchCounter?.plus(1)
 
+            puan = puan + 10
+            puanTextView.text = " Puan: ${puan.toString()}"
+
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
             cards[position1].isMatched = true
             cards[position2].isMatched = true
 
-            puan = puan + 10
-            puanTextView.text = " Puan: ${puan.toString()}"
+            matchedController(16)
 
-            matchedController(8)
         }
     }
+
 
     override fun onBackPressed() {
         super.onBackPressed()

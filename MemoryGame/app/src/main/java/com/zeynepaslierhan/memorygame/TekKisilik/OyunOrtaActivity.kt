@@ -1,4 +1,4 @@
-package com.zeynepaslierhan.memorygame
+package com.zeynepaslierhan.memorygame.TekKisilik
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -10,13 +10,12 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.zeynepaslierhan.memorygame.CardsFromFirebase
+import com.zeynepaslierhan.memorygame.Kartlar.MemoryCard
+import com.zeynepaslierhan.memorygame.R
+import kotlinx.android.synthetic.main.activity_oyunorta.*
 
-import kotlinx.android.synthetic.main.activity_oyunbasit.*
-
-
-private const val TAG = "Basit Test";
-
-class OyunBasitActivity : AppCompatActivity() {
+class OyunOrtaActivity : AppCompatActivity() {
 
     private lateinit var views: List<ImageView>
     private lateinit var cards: List<MemoryCard>
@@ -72,15 +71,28 @@ class OyunBasitActivity : AppCompatActivity() {
                     MPlost?.start()
 
                     sayac.text = "Süre Bitti!"
+
                     imageView1.isVisible=false;
                     imageView2.isVisible=false;
                     imageView3.isVisible=false;
                     imageView4.isVisible=false;
+                    imageView5.isVisible=false;
+                    imageView6.isVisible=false;
+                    imageView7.isVisible=false;
+                    imageView8.isVisible=false;
+                    imageView9.isVisible=false;
+                    imageView10.isVisible=false;
+                    imageView11.isVisible=false;
+                    imageView12.isVisible=false;
+                    imageView13.isVisible=false;
+                    imageView14.isVisible=false;
+                    imageView15.isVisible=false;
+                    imageView16.isVisible=false;
                 }
 
                 val handler = Handler()
                 handler.postDelayed({ // Do something after 5s = 5000ms
-                    val intent = Intent(this@OyunBasitActivity,zorluk_secActivity::class.java)
+                    val intent = Intent(this@OyunOrtaActivity, zorluk_secActivity::class.java)
                     startActivity(intent)
 
                     MPbacground?.stop()
@@ -108,7 +120,7 @@ class OyunBasitActivity : AppCompatActivity() {
 
             val handler = Handler()
             handler.postDelayed({ // Do something after 8s = 8000ms
-                val intent = Intent(this@OyunBasitActivity,zorluk_secActivity::class.java)
+                val intent = Intent(this@OyunOrtaActivity, zorluk_secActivity::class.java)
                 startActivity(intent)
 
                 MPbacground?.stop()
@@ -122,14 +134,14 @@ class OyunBasitActivity : AppCompatActivity() {
     }
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_oyunbasit)
+        setContentView(R.layout.activity_oyunorta)
 
         // Sayfa Yapısı
         musicSetting()
         timer()
+        CardsFromFirebase().cardSetting()
 
         val cardSet = CardsFromFirebase()
 
@@ -138,7 +150,10 @@ class OyunBasitActivity : AppCompatActivity() {
         card1 = cardSet.decoded_card1
         card2 = cardSet.decoded_card1
 
-        val images = mutableListOf(card1,card2)
+
+        puanTextView.text = " Puan: ${puan.toString()}"
+
+        val images = mutableListOf(card1,card2,card1,card2,card1,card2,card1,card2)
 
         // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
         images.addAll(images)
@@ -146,7 +161,8 @@ class OyunBasitActivity : AppCompatActivity() {
         // sırayı randomize ediyor.
         images.shuffle()
 
-        views = listOf(imageView1, imageView2, imageView3, imageView4)
+        views = listOf(imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,imageView7,imageView8,imageView9,
+            imageView10,imageView11,imageView12,imageView13,imageView14,imageView15,imageView16)
 
         cards = views.indices.map { index ->
             MemoryCard(images[index])
@@ -186,7 +202,7 @@ class OyunBasitActivity : AppCompatActivity() {
             return
         }
 
-                    // üç durum olacak
+        // üç durum olacak
         // öncesinde 0 kart çevrilmiş -> seçilen kartı çevir
         // öncesinde 1 kart çevrilmiş -> seçilen kartı çevir + aynı olup olmamasını kontrol et
         // öncesinde 2 kart çevrilmiş -> seçilmiş kartları ters çevir + seçili kartı çevir.
@@ -194,7 +210,6 @@ class OyunBasitActivity : AppCompatActivity() {
         if (indexOfSingleSelectedCard == null) {
             // 0 ya da 2 seçili kart varsa
             restoreCards()
-            MPbacground?.start()
             indexOfSingleSelectedCard = position
         } else {
             // 1 kart seçiliyse
@@ -219,14 +234,13 @@ class OyunBasitActivity : AppCompatActivity() {
             matchCounter = matchCounter?.plus(1)
 
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
-
             cards[position1].isMatched = true
             cards[position2].isMatched = true
 
             puan = puan + 10
             puanTextView.text = " Puan: ${puan.toString()}"
 
-            matchedController(2)
+            matchedController(8)
         }
     }
 

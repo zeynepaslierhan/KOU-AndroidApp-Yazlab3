@@ -1,10 +1,10 @@
-package com.zeynepaslierhan.memorygame
+package com.zeynepaslierhan.memorygame.Splash
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ProgressBar
 import android.widget.TextView
+import com.zeynepaslierhan.memorygame.R
 
 class BasitLoadingScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

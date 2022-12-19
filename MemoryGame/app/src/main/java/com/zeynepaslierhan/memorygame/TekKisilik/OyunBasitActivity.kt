@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.zeynepaslierhan.memorygame.Kartlar.CardsFromFirebase
 import com.zeynepaslierhan.memorygame.Kartlar.MemoryCard
+import com.zeynepaslierhan.memorygame.Menu.oyuncu_secActivity
 import com.zeynepaslierhan.memorygame.R
 
 import kotlinx.android.synthetic.main.activity_oyunbasit.*
@@ -134,7 +135,8 @@ class OyunBasitActivity : AppCompatActivity() {
         musicSetting()
         timer()
 
-        val cardSet = CardsFromFirebase()
+        val card = oyuncu_secActivity()
+        val cardSet = card.cards
 
         cardSet.cardSetting()
         CardsBacground = cardSet.decoded_cardBackground
@@ -189,7 +191,7 @@ class OyunBasitActivity : AppCompatActivity() {
             return
         }
 
-                    // üç durum olacak
+        // üç durum olacak
         // öncesinde 0 kart çevrilmiş -> seçilen kartı çevir
         // öncesinde 1 kart çevrilmiş -> seçilen kartı çevir + aynı olup olmamasını kontrol et
         // öncesinde 2 kart çevrilmiş -> seçilmiş kartları ters çevir + seçili kartı çevir.

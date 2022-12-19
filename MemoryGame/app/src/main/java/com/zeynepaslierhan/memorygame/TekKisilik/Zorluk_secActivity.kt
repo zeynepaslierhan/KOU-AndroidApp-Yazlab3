@@ -24,37 +24,37 @@ class zorluk_secActivity : AppCompatActivity() {
     }
 
     fun basicGame(view: View){
-        val intent = Intent(this, BasitLoadingScreenActivity::class.java)
 
-        var sample = false
-        sample = intent.getBooleanExtra("sample", sample)
-        intent.putExtra("activity",if (sample) "1" else "4")
+        var sample = intent.getStringExtra("sample").toString()
 
-        Log.d(TAG,"${sample}")
+        val intent2 = Intent(this, BasitLoadingScreenActivity::class.java)
+        intent2.putExtra("activity",if (sample == "single") "1" else "4")
 
-        startActivity(intent)
+        Log.d(TAG,sample)
+
+        startActivity(intent2)
     }
     fun intermediateGame(view: View){
-        val intent = Intent(this, BasitLoadingScreenActivity::class.java)
 
-        var sample = false
-        sample = intent.getBooleanExtra("sample", sample)
-        intent.putExtra("activity",if (sample) "2" else "5")
+        var sample = intent.getStringExtra("sample").toString()
 
-        Log.d(TAG,"${sample}")
+        val intent2 = Intent(this, BasitLoadingScreenActivity::class.java)
+        intent2.putExtra("activity",if (sample == "single") "2" else "5")
 
-        startActivity(intent)
+        Log.d(TAG,sample)
+
+        startActivity(intent2)
     }
     fun hardGame(view: View){
-        val intent = Intent(this, BasitLoadingScreenActivity::class.java)
 
-        var sample = false
-        sample = intent.getBooleanExtra("sample", sample)
-        intent.putExtra("activity",if (sample) "3" else "6")
+        var sample = intent.getStringExtra("sample").toString()
 
-        Log.d(TAG,"${sample}")
+        val intent2 = Intent(this, BasitLoadingScreenActivity::class.java)
+        intent2.putExtra("activity",if (sample == "single") "3" else "6")
 
-        startActivity(intent)
+        Log.d(TAG,sample)
+
+        startActivity(intent2)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

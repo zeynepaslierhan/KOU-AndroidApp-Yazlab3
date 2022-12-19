@@ -29,17 +29,13 @@ class oyuncu_secActivity : AppCompatActivity() {
 
     fun single(view: View){
         val intent = Intent(this, zorluk_secActivity::class.java)
-
-        val tfintent = Intent(this, zorluk_secActivity::class.java)
-        tfintent.putExtra("sample", true)
+        intent.putExtra("sample", "single")
 
         startActivity(intent)
     }
     fun multiplayer(view: View){
         val intent = Intent(this,zorluk_secActivity::class.java)
-
-        val tfintent = Intent(this, zorluk_secActivity::class.java)
-        tfintent.putExtra("sample", false)
+        intent.putExtra("sample", "multi")
 
         startActivity(intent)
     }

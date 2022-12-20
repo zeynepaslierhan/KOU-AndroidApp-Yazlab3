@@ -1,5 +1,10 @@
-# Hafıza Oynu
-
+<h1 align="center">
+  <br>
+  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Thema/logo.png" alt="SoftwareDeveloperArchive" width="200"></a>
+  <br>
+  Hafıza Oynu
+  <br>
+</h1>
 Bu proje ile Android uygulama ve bulut bilişim teknolojilerinin kullanılması amaçlanmaktadır. Projede belirtilen süre içinde zorluk seviyesine göre kartları doğru eşleştirmek gerekmektedir. 
 
 ***Programlama Dili:*** Kotlin
@@ -57,6 +62,8 @@ Arka plan müziği: Oyun esnasında arka planda bir müzik çalınır. Bu müzik
 2. Oyun süresi bittiği zaman arka fon müziği olumsuz bir uyarı verilir. 
 
 3. Süre bitmeden bütün kartların eşi bulununca arka fon müziği kazandınız anlamında olumlu bir uyarı verir.
+
+## ArkaYüz
 
 
 ## Kaynakça

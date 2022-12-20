@@ -10,9 +10,7 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.zeynepaslierhan.memorygame.Kartlar.CardsFromFirebase
 import com.zeynepaslierhan.memorygame.Kartlar.MemoryCard
-import com.zeynepaslierhan.memorygame.Menu.oyuncu_secActivity
 import com.zeynepaslierhan.memorygame.R
 
 import kotlinx.android.synthetic.main.activity_oyunbasit.*
@@ -135,15 +133,8 @@ class OyunBasitActivity : AppCompatActivity() {
         musicSetting()
         timer()
 
-        val card = oyuncu_secActivity()
-        val cardSet = card.cards
 
-        cardSet.cardSetting()
-        CardsBacground = cardSet.decoded_cardBackground
-        card1 = cardSet.decoded_card1
-        card2 = cardSet.decoded_card1
-
-        val images = mutableListOf(card1,card2)
+        val images = mutableListOf(R.drawable.gryffindor1,R.drawable.hufflepuff1)
 
         // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
         images.addAll(images)
@@ -178,7 +169,7 @@ class OyunBasitActivity : AppCompatActivity() {
             if (card.isMatched) {
                 view.alpha = 0.3f
             }
-            view.setImageBitmap(if (card.isFaceUp) card.identifier else CardsBacground)
+            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart)
         }
     }
 

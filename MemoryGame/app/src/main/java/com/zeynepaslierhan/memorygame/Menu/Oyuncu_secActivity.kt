@@ -7,7 +7,6 @@ import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
-import com.zeynepaslierhan.memorygame.Kartlar.CardsFromFirebase
 import com.zeynepaslierhan.memorygame.R
 import com.zeynepaslierhan.memorygame.TekKisilik.zorluk_secActivity
 
@@ -15,13 +14,9 @@ class oyuncu_secActivity : AppCompatActivity() {
 
     private lateinit var auth:FirebaseAuth
 
-    var cards = CardsFromFirebase()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_oyuncu_sec)
-
-        cards.cardSetting()
 
         auth= FirebaseAuth.getInstance()
 

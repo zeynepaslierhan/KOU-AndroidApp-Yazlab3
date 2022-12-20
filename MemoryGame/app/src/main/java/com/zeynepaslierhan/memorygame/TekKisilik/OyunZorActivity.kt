@@ -10,7 +10,6 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
-import com.zeynepaslierhan.memorygame.Kartlar.CardsFromFirebase
 import com.zeynepaslierhan.memorygame.Kartlar.MemoryCard
 import com.zeynepaslierhan.memorygame.R
 import kotlinx.android.synthetic.main.activity_oyunzor.*
@@ -132,20 +131,14 @@ class OyunZorActivity : AppCompatActivity() {
         // Sayfa Yapısı
         musicSetting()
         timer()
-        CardsFromFirebase().cardSetting()
-
-
-        val cardSet = CardsFromFirebase()
-
-        cardSet.cardSetting()
-        CardsBacground = cardSet.decoded_cardBackground
-        card1 = cardSet.decoded_card1
-        card2 = cardSet.decoded_card1
-
 
         puanTextView.text = " Puan: ${puan.toString()}"
 
-        val images = mutableListOf(card1,card2,card1,card2,card1,card2,card1,card2,card2,card1,card2,card1,card2,card1,card2,card1,card2,card1)
+        val images = mutableListOf(R.drawable.gryffindor1,R.drawable.gryffindor2,R.drawable.gryffindor3,R.drawable.gryffindor4,
+            R.drawable.hufflepuff1,R.drawable.hufflepuff2,R.drawable.hufflepuff3,R.drawable.hufflepuff4,
+            R.drawable.ravenclaw1,R.drawable.ravenclaw2,R.drawable.ravenclaw3,R.drawable.ravenclaw4,
+            R.drawable.slytherin1,R.drawable.slytherin2,R.drawable.slytherin3,R.drawable.slytherin4,
+            R.drawable.gryffindor3,R.drawable.slytherin3)
 
         // her img'i 2 kez ekleyerek çiftler oluşturuyoruz.
         images.addAll(images)
@@ -187,7 +180,7 @@ class OyunZorActivity : AppCompatActivity() {
             if (card.isMatched) {
                 view.alpha = 0.3f
             }
-            view.setImageBitmap(if (card.isFaceUp) card.identifier else CardsBacground)
+            view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart)
         }
     }
 

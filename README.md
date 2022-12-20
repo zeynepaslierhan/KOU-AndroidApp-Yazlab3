@@ -46,7 +46,7 @@ Bu proje ile Android uygulama ve bulut bilişim teknolojilerinin kullanılması 
 
 * **Tüm Kartlar:**
 
-  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Thema/GameCards/KartArkas%C4%B1.png" align ="left" height="500">
+  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Thema/GameCards/KartArkas%C4%B1.png" align ="left" height="400">
 
   | Evler | Karakter 1 | Karakter 2 | Karakter 3 | Karakter 4      |
   | :---         |     :---:      |          ---: |          ---: |          ---: |

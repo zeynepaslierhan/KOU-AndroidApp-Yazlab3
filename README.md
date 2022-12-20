@@ -60,13 +60,252 @@ Bu proje ile Android uygulama ve bulut bilişim teknolojilerinin kullanılması 
 Arka plan müziği: Oyun esnasında arka planda bir müzik çalınır. Bu müzik oyun oynanırken çalmaya devam eder ve 3 durumda bu müzik değişecektir. 
 
 1. Kartın eşi bulunduğunda farklı bir müzik ile uyarı verilir. 
-
 2. Oyun süresi bittiği zaman arka fon müziği olumsuz bir uyarı verilir. 
-
 3. Süre bitmeden bütün kartların eşi bulununca arka fon müziği kazandınız anlamında olumlu bir uyarı verir.
+
+
 
 ## ArkaYüz
 
+### Firebase
+
+* **Login işlemi**
+
+  ```kotlin
+
+      // global değişken tanımlandı
+
+      private lateinit var auth:FirebaseAuth
+
+      // Aktivite'nin onCreate() fonksiyonu içerisinde auth'a değer atandı
+
+      auth = FirebaseAuth.getInstance()
+
+      fun login(view:View){
+
+          val email = EmailText.text.toString()
+          val password = PasswordText.text.toString()
+
+          auth.signInWithEmailAndPassword(email,password).addOnCompleteListener { task->
+              if(task.isSuccessful){
+
+                  val user = auth.currentUser?.email.toString()
+
+                  Toast.makeText(this,"Welcome: ${user}",Toast.LENGTH_LONG).show()
+
+                  val intent =Intent(this,FeedActivity::class.java)
+                  startActivity(intent)
+                  finish()
+              }
+          }.addOnFailureListener{exception->
+              Toast.makeText(applicationContext,exception.localizedMessage,Toast.LENGTH_LONG).show()
+          }
+
+      }
+
+  ```
+
+* **Register işlemi:**
+
+  ```kotlin
+  fun register(view: View){
+
+          val email = EmailText.text.toString()
+          val password = PasswordText.text.toString()
+
+          auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener { task->
+              if(task.isSuccessful){
+                  val intent = Intent(this,FeedActivity::class.java)
+                  startActivity(intent)
+                  finish()
+              }
+          }.addOnFailureListener{exception->
+              Toast.makeText(applicationContext,exception.localizedMessage,Toast.LENGTH_LONG).show()
+          }
+
+      }
+  ```
+
+* **Güncel Kullanıcı Bilgileri:**
+
+  ```kotlin
+
+    val user = auth.currentUser
+          if(user!=null){
+              val intent =Intent(this,FeedActivity::class.java)
+              startActivity(intent)
+              finish()
+          }
+  ```
+
+
+* **Çıkış:**
+
+  ```kotlin
+    auth.signOut()
+  ```
+
+### Müzik işlemleri
+
+* **Müziklerin Tanımlanması:**
+
+  ```kotlin
+   private var MPbacground: MediaPlayer? = null
+    private var MPmatch: MediaPlayer? = null
+    private var MPwin: MediaPlayer? = null
+    private var MPlost: MediaPlayer? = null
+
+    fun musicSetting(){
+        if (MPbacground == null) {
+            MPbacground = MediaPlayer.create(this, R.raw.background)
+            MPbacground!!.start()
+        }
+        if (MPmatch == null) {
+            MPmatch = MediaPlayer.create(this, R.raw.card_match)
+        }
+        if (MPwin == null) {
+            MPwin = MediaPlayer.create(this, R.raw.win_congrats)
+        }
+        if (MPlost == null) {
+            MPlost = MediaPlayer.create(this, R.raw.time_over)
+        }
+    }
+
+  ```
+
+* **Müziklerin Başlatılması, Sonlandırılması:**
+  
+  ```kotlin
+
+    MPbacground?.start()
+    MPmatch?.start()
+    MPwin?.start()
+    MPlost?.start()
+
+          
+    MPbacground?.stop()
+    MPmatch?.stop()
+    MPwin?.stop()
+    MPlost?.stop()
+
+  ```
+
+### Sayac
+
+```kotlin
+fun timer(){
+
+  object : CountDownTimer(45000,1000) {
+    override fun onTick(time: Long) {
+    }
+
+    override fun onFinish() {
+    }
+  }.start()
+}
+
+```
+
+### Aktivite
+
+* **Aktiviteler arası geçiş:**
+
+  ```kotlin
+
+    // Main Activitesine yönlendirilir
+    val intent = Intent(this,MainActivity::class.java)
+    startActivity(intent)
+  ```
+
+* **Aktiviteler arası Parametre Aktarımı:**
+
+  ```kotlin
+
+  // Önceki aktivite
+
+  val intent = Intent(this, zorluk_secActivity::class.java)
+  intent.putExtra("sample", "single")
+  startActivity(intent)
+
+  // Şimdiki aktivite
+
+  val sample = intent.getStringExtra("sample").toString()
+
+  ```
+
+
+
+### Oyun Yapısı
+
+```kotlin
+
+
+  import android.os.Bundle
+  import android.widget.ImageView
+  import android.widget.Toast
+  import androidx.appcompat.app.AppCompatActivity
+  import kotlinx.android.synthetic.main.activity_oyun_basit.*
+
+      private lateinit var views: List<ImageView>
+      private lateinit var cards: List<MemoryCard>
+      private var indexOfSingleSelectedCard: Int? = null
+
+      override fun onCreate(savedInstanceState: Bundle?) {
+          super.onCreate(savedInstanceState)
+          cards.forEachIndexed { index, card ->
+
+              val view = views[index]
+              if (card.isMatched) {
+                  view.alpha = 0.3f
+              }
+              view.setImageResource(if (card.isFaceUp) card.identifier else R.drawable.kart2x2)
+          }
+      }
+
+      private fun updateModels(position: Int) {
+          val card = cards[position]
+
+          // hata kontrolü
+          if(card.isFaceUp) {
+              Toast.makeText(this, "Geçersiz Hareket!", Toast.LENGTH_SHORT).show();
+              return
+          }
+
+                      // üç durum olacak
+          // öncesinde 0 kart çevrilmiş -> seçilen kartı çevir
+          // öncesinde 1 kart çevrilmiş -> seçilen kartı çevir + aynı olup olmamasını kontrol et
+          // öncesinde 2 kart çevrilmiş -> seçilmiş kartları ters çevir + seçili kartı çevir.
+
+          if (indexOfSingleSelectedCard == null) {
+              // 0 ya da 2 seçili kart varsa
+              restoreCards()
+              indexOfSingleSelectedCard = position
+          } else {
+              // 1 kart seçiliyse
+              checkForMatch(indexOfSingleSelectedCard!!, position)
+              indexOfSingleSelectedCard = null
+          }
+
+          card.isFaceUp = !card.isFaceUp
+      }
+
+      private fun restoreCards() {
+          for (card in cards) {
+              if (!card.isMatched) {
+                  card.isFaceUp = false
+              }
+          }
+      }
+
+      private fun checkForMatch(position1: Int, position2: Int) {
+          if (cards[position1].identifier == cards[position2].identifier) {
+              Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
+              cards[position1].isMatched = true
+              cards[position2].isMatched = true
+          }
+      }
+  }
+```
 
 ## Kaynakça
 1. [Kotlin İle Android Mobil Uygulama Geliştirme Eğitimi Temel Seviye , Atıl Samancıoğlu, *BTK Akademi*](https://www.btkakademi.gov.tr/portal/course/kotlin-ile-android-mobil-uygulama-gelistirme-egitimi-temel-seviye-10274)

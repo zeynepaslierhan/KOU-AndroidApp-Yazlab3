@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Thema/logo.png" alt="SoftwareDeveloperArchive" width="200"></a>
+  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Thema/logo.png" alt="SoftwareDeveloperArchive" width="100"></a>
   <br>
   Hafıza Oynu
   <br>
@@ -45,6 +45,8 @@ Bu proje ile Android uygulama ve bulut bilişim teknolojilerinin kullanılması 
   | *Tek Kişilik*   |  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/TekKisilikBasit.png" height="200">         |  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/TekKisilikOrta.png" height="200">       |  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/TekKisilikZor.png" height="200">       |
 
 * **Tüm Kartlar:**
+
+  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Thema/GameCards/KartArkas%C4%B1.png" align ="left" height="500">
 
   | Evler | Karakter 1 | Karakter 2 | Karakter 3 | Karakter 4      |
   | :---         |     :---:      |          ---: |          ---: |          ---: |

@@ -133,8 +133,6 @@ class MultiOrtaActivity : AppCompatActivity() {
         musicSetting()
         timer()
 
-        puanTextView.text = " Puan: ${puan.toString()}"
-
         val images = mutableListOf(R.drawable.gryffindor2,R.drawable.gryffindor3,R.drawable.hufflepuff2,
             R.drawable.hufflepuff3,R.drawable.slytherin1,R.drawable.slytherin2,R.drawable.slytherin3,R.drawable.slytherin4)
 

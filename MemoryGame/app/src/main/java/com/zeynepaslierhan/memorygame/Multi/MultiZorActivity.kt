@@ -123,8 +123,6 @@ class MultiZorActivity : AppCompatActivity() {
         musicSetting()
         timer()
 
-        puanTextView.text = " Puan: ${puan.toString()}"
-
         val images = mutableListOf(R.drawable.gryffindor1,R.drawable.gryffindor2,R.drawable.gryffindor3,R.drawable.gryffindor4,
             R.drawable.hufflepuff1,R.drawable.hufflepuff2,R.drawable.hufflepuff3,R.drawable.hufflepuff4,
             R.drawable.ravenclaw1,R.drawable.ravenclaw2,R.drawable.ravenclaw3,R.drawable.ravenclaw4,

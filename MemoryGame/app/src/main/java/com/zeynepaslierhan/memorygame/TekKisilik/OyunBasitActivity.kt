@@ -6,6 +6,7 @@ import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
+import android.util.Log
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,7 +25,7 @@ class OyunBasitActivity : AppCompatActivity() {
     private lateinit var cards: List<MemoryCard>
     private var indexOfSingleSelectedCard: Int? = null
 
-    private var puan : Int = 0
+    private var puan : Long = 0
 
     // Müzik Ayarları
 
@@ -212,7 +213,88 @@ class OyunBasitActivity : AppCompatActivity() {
             cards[position1].isMatched = true
             cards[position2].isMatched = true
 
-            puan = puan + 10
+
+            if (cards[position1].identifier == R.drawable.gryffindor1)
+            {
+                puan += (20*2*2)
+            }
+
+            else if (cards[position1].identifier == R.drawable.gryffindor2)
+            {
+                puan += 10
+            }
+
+            else if (cards[position1].identifier == R.drawable.gryffindor3)
+            {
+                puan += 10
+            }
+
+            else if (cards[position1].identifier == R.drawable.gryffindor4)
+            {
+                puan += 8
+            }
+
+            else if (cards[position1].identifier == R.drawable.hufflepuff1)
+            {
+                puan += 20
+            }
+
+            else if (cards[position1].identifier == R.drawable.hufflepuff2)
+            {
+                puan += 18
+            }
+
+            else if (cards[position1].identifier == R.drawable.hufflepuff3)
+            {
+                puan += 13
+            }
+
+            else if (cards[position1].identifier == R.drawable.hufflepuff4)
+            {
+                puan += 18
+            }
+
+            else if (cards[position1].identifier == R.drawable.ravenclaw1)
+            {
+                puan += 20
+            }
+
+            else if (cards[position1].identifier == R.drawable.ravenclaw2)
+            {
+                puan += 13
+            }
+
+            else if (cards[position1].identifier == R.drawable.ravenclaw3)
+            {
+                puan += 9
+            }
+
+            else if (cards[position1].identifier == R.drawable.ravenclaw4)
+            {
+                puan += 15
+            }
+
+            else if (cards[position1].identifier == R.drawable.slytherin1)
+            {
+                puan += 20
+            }
+
+            else if (cards[position1].identifier == R.drawable.slytherin2)
+            {
+                puan += 18
+            }
+
+            else if (cards[position1].identifier == R.drawable.slytherin3)
+            {
+                puan += 13
+            }
+
+            else if (cards[position1].identifier == R.drawable.slytherin4)
+            {
+                puan += 16
+            }
+
+
             puanTextView.text = " Puan: ${puan.toString()}"
 
             matchedController(2)

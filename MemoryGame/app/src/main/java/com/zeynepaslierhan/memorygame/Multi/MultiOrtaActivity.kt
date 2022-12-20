@@ -13,15 +13,13 @@ import androidx.core.view.isVisible
 import com.zeynepaslierhan.memorygame.Kartlar.MemoryCard
 import com.zeynepaslierhan.memorygame.R
 import com.zeynepaslierhan.memorygame.TekKisilik.zorluk_secActivity
-import kotlinx.android.synthetic.main.activity_oyunorta.*
+import kotlinx.android.synthetic.main.activity_multi_orta.*
 
 class MultiOrtaActivity : AppCompatActivity() {
 
     private lateinit var views: List<ImageView>
     private lateinit var cards: List<MemoryCard>
     private var indexOfSingleSelectedCard: Int? = null
-
-    private var puan : Int = 0
 
     // Müzik Ayarları
 
@@ -101,13 +99,6 @@ class MultiOrtaActivity : AppCompatActivity() {
             }
         }.start()
     }
-
-
-    // Kart Ayarları
-
-    private lateinit var CardsBacground : Bitmap
-    private lateinit var card1 : Bitmap
-    private lateinit var card2 : Bitmap
 
 
     // Tüm kartların eşleşmesi
@@ -220,6 +211,14 @@ class MultiOrtaActivity : AppCompatActivity() {
         }
     }
 
+
+
+    var player1 = true
+    private var puan : Int = 0
+
+    var player2 = false
+    private var puan2 : Int = 0
+
     private fun checkForMatch(position1: Int, position2: Int) {
         if (cards[position1].identifier == cards[position2].identifier) {
 
@@ -229,11 +228,25 @@ class MultiOrtaActivity : AppCompatActivity() {
             cards[position1].isMatched = true
             cards[position2].isMatched = true
 
-            puan = puan + 10
-            puanTextView.text = " Puan: ${puan.toString()}"
+            if (player1){
+                puan = puan + 10
+                puanTextView.text = " Oyuncu1: ${puan.toString()}"
+            }else{
+                puan2 = puan2 + 10
+                puanTextView2.text = "Oyuncu2: ${puan2.toString()}"
+            }
 
             matchedController(8)
         }
+        else{
+            if(player1) {
+                player1 = false
+                player2 = true
+            }else{
+                player1 = true
+                player2 = false
+            }
+        }//imza Dev. Zeynep
     }
 
     override fun onBackPressed() {
@@ -242,5 +255,6 @@ class MultiOrtaActivity : AppCompatActivity() {
         MPbacground?.stop()
         MPmatch?.stop()
         MPwin?.stop()
+        MPlost?.stop()
     }
 }

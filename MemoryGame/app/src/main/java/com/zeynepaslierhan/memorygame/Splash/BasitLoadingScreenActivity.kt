@@ -21,7 +21,7 @@ class BasitLoadingScreenActivity : AppCompatActivity() {
         val anim = ProgressBarAnimation(
             this,progressBar,textView,0F,100F,activity
         )
-        anim.duration=8000
+        anim.duration=3000
         progressBar.animation = anim
     }
 }

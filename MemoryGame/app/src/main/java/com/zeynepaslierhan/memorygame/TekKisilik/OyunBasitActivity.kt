@@ -93,13 +93,6 @@ class OyunBasitActivity : AppCompatActivity() {
     }
 
 
-    // Kart Ayarları
-
-    private lateinit var CardsBacground : Bitmap
-    private lateinit var card1 : Bitmap
-    private lateinit var card2 : Bitmap
-
-
     // Tüm kartların eşleşmesi
 
     private var matchCounter : Int?=0
@@ -232,5 +225,6 @@ class OyunBasitActivity : AppCompatActivity() {
         MPbacground?.stop()
         MPmatch?.stop()
         MPwin?.stop()
+        MPlost?.stop()
     }
 }

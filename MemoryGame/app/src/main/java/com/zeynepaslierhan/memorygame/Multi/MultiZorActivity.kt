@@ -13,14 +13,12 @@ import androidx.core.view.isVisible
 import com.zeynepaslierhan.memorygame.Kartlar.MemoryCard
 import com.zeynepaslierhan.memorygame.R
 import com.zeynepaslierhan.memorygame.TekKisilik.zorluk_secActivity
-import kotlinx.android.synthetic.main.activity_oyunzor.*
+import kotlinx.android.synthetic.main.activity_multi_zor.*
 
 class MultiZorActivity : AppCompatActivity() {
     private lateinit var views: List<ImageView>
     private lateinit var cards: List<MemoryCard>
     private var indexOfSingleSelectedCard: Int? = null
-
-    private var puan : Int = 0
 
     // Müzik Ayarları
 
@@ -91,13 +89,6 @@ class MultiZorActivity : AppCompatActivity() {
             }
         }.start()
     }
-
-
-    // Kart Ayarları
-
-    private lateinit var CardsBacground : Bitmap
-    private lateinit var card1 : Bitmap
-    private lateinit var card2 : Bitmap
 
 
     // Tüm kartların eşleşmesi
@@ -219,13 +210,26 @@ class MultiZorActivity : AppCompatActivity() {
         }
     }
 
+
+
+    var player1 = true
+    private var puan : Int = 0
+
+    var player2 = false
+    private var puan2 : Int = 0
+
     private fun checkForMatch(position1: Int, position2: Int) {
         if (cards[position1].identifier == cards[position2].identifier) {
 
             matchCounter = matchCounter?.plus(1)
 
-            puan = puan + 10
-            puanTextView.text = " Puan: ${puan.toString()}"
+            if (player1){
+                puan = puan + 10
+                puanTextView.text = " Oyuncu1: ${puan.toString()}"
+            }else{
+                puan2 = puan2 + 10
+                puanTextView2.text = "Oyuncu2: ${puan2.toString()}"
+            }
 
             Toast.makeText(this, "Eşleşme Bulundu!", Toast.LENGTH_SHORT).show();
             cards[position1].isMatched = true
@@ -234,6 +238,15 @@ class MultiZorActivity : AppCompatActivity() {
             matchedController(16)
 
         }
+        else{
+            if(player1) {
+                player1 = false
+                player2 = true
+            }else{
+                player1 = true
+                player2 = false
+            }
+        }//imza Dev. Zeynep
     }
 
 
@@ -243,5 +256,6 @@ class MultiZorActivity : AppCompatActivity() {
         MPbacground?.stop()
         MPmatch?.stop()
         MPwin?.stop()
+        MPlost?.stop()
     }
 }

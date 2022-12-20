@@ -1,7 +1,6 @@
 package com.zeynepaslierhan.memorygame.Multi
 
 import android.content.Intent
-import android.graphics.Bitmap
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -210,10 +209,10 @@ class MultiBasitActivity : AppCompatActivity() {
 
             if (player1){
                 puan = puan + 10
-                puanTextView.text = " Puan: ${puan.toString()}"
+                puanTextView.text = " Oyuncu1: ${puan.toString()}"
             }else{
                 puan2 = puan2 + 10
-                puanTextView2.text = " Puan: ${puan2.toString()}"
+                puanTextView2.text = "Oyuncu2: ${puan2.toString()}"
             }
 
 
@@ -227,7 +226,7 @@ class MultiBasitActivity : AppCompatActivity() {
                 player1 = true
                 player2 = false
             }
-        }
+        }//imza Dev. Zeynep
     }
 
     override fun onBackPressed() {
@@ -236,5 +235,6 @@ class MultiBasitActivity : AppCompatActivity() {
         MPbacground?.stop()
         MPmatch?.stop()
         MPwin?.stop()
+        MPlost?.stop()
     }
 }

@@ -208,10 +208,170 @@ class MultiBasitActivity : AppCompatActivity() {
             cards[position2].isMatched = true
 
             if (player1){
-                puan = puan + 10
+
+                if (cards[position1].identifier == R.drawable.gryffindor1)
+                {
+                    puan += (20*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.gryffindor2)
+                {
+                    puan += (10*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.gryffindor3)
+                {
+                    puan += (10*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.gryffindor4)
+                {
+                    puan += (8*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.hufflepuff1)
+                {
+                    puan += (20*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.hufflepuff2)
+                {
+                    puan += (18*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.hufflepuff3)
+                {
+                    puan += (13*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.hufflepuff4)
+                {
+                    puan += (18*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.ravenclaw1)
+                {
+                    puan += (20*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.ravenclaw2)
+                {
+                    puan += (13*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.ravenclaw3)
+                {
+                    puan += (9*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.ravenclaw4)
+                {
+                    puan += (15*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.slytherin1)
+                {
+                    puan += (20*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.slytherin2)
+                {
+                    puan += (18*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.slytherin3)
+                {
+                    puan += (13*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.slytherin4)
+                {
+                    puan += (16*2*2)
+                }
+
                 puanTextView.text = " Oyuncu1: ${puan.toString()}"
             }else{
-                puan2 = puan2 + 10
+
+                if (cards[position1].identifier == R.drawable.gryffindor1)
+                {
+                    puan2 += (20*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.gryffindor2)
+                {
+                    puan2 += (10*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.gryffindor3)
+                {
+                    puan2 += (10*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.gryffindor4)
+                {
+                    puan2 += (8*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.hufflepuff1)
+                {
+                    puan2 += (20*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.hufflepuff2)
+                {
+                    puan2 += (18*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.hufflepuff3)
+                {
+                    puan2 += (13*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.hufflepuff4)
+                {
+                    puan2 += (18*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.ravenclaw1)
+                {
+                    puan2 += (20*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.ravenclaw2)
+                {
+                    puan2 += (13*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.ravenclaw3)
+                {
+                    puan2 += (9*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.ravenclaw4)
+                {
+                    puan2 += (15*2*1)
+                }
+
+                else if (cards[position1].identifier == R.drawable.slytherin1)
+                {
+                    puan2 += (20*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.slytherin2)
+                {
+                    puan2 += (18*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.slytherin3)
+                {
+                    puan2 += (13*2*2)
+                }
+
+                else if (cards[position1].identifier == R.drawable.slytherin4)
+                {
+                    puan2 += (16*2*2)
+                }
+
                 puanTextView2.text = "Oyuncu2: ${puan2.toString()}"
             }
 

@@ -1,35 +1,54 @@
-# KOU-AndroidApp-Yazlab3
+# Hafıza Oynu
 
 Bu proje ile Android uygulama ve bulut bilişim teknolojilerinin kullanılması amaçlanmaktadır. Projede belirtilen süre içinde zorluk seviyesine göre kartları doğru eşleştirmek gerekmektedir. 
 
-Programlama Dili: Kotlin
+***Programlama Dili:*** Kotlin
 
-Geliştme Ortamı (IDE): Android Studio
+***Geliştme Ortamı *(IDE)*:*** Android Studio
 
-Bulut Bilişim (Cloud): Firebase
+***Bulut Bilişim *(Cloud)*:*** Firebase
 
 ## Uygulamanın Arayüzleri
 
-Giriş ekranı: Oyun ilk açıldığında ekranda açılacak sayfa giriş ekranı vardır. Kullanıcı bu ekrandan, kullanıcı adı ve şifresi ile giriş yapabilir, şifre değiştirebilir ve kaydolabilir.
+* **Giriş ekranı:** Oyun ilk açıldığında ekranda açılacak sayfa giriş ekranı vardır. Kullanıcı bu ekrandan, kullanıcı adı ve şifresi ile giriş yapabilir, şifre değiştirebilir ve kaydolabilir.
 
-• Oyun ekranı: Kullanıcı giriş yaptıktan sonra karşısına gelecek olan ekran, oyun ekranıdır. Burada Tek Oyuncu ve Çoklu Oyuncu Olarak iki farklı seçenek bulunur. Oyun ekranı ilk açıldığında “BAŞLA” butonu bulunur. Oyuncu BAŞLA butonuna tıkladıktan 3 saniye sonra oyun ve süre başlatılır.
+  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/Login-Register.png" height="200">
 
-• Oyun başlatıldığında kartlar kapalı şekilde dağıtılır. Oyundaki kartların her birinden birer çift bulur. Buradaki amaç açılan kartın diğer çiftini bulabilmektir. Oyunda kartların sırası her seferinde rastgeledir.
+* **Oyun ekranı:** Kullanıcı giriş yaptıktan sonra karşısına gelecek olan ekran, oyun ekranıdır. Burada Tek Oyuncu ve Çoklu Oyuncu Olarak iki farklı seçenek bulunur. Oyun ekranı ilk açıldığında “BAŞLA” butonu bulunur. Oyuncu BAŞLA butonuna tıkladıktan 3 saniye sonra oyun ve süre başlatılır.
 
+  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/OyuncuSec.png" align ="left" height="200">
 
-• Oyun zorluk seviyesi: Oyunda 2*2, 4*4 ve 6*6 olmak üzere 3 farklı zorluk seviyesi vardır.
+  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/ZorlukSec.png" align ="left" height="200">
+
+  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/Loading.png" align ="left" height="200">
+
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+
+* **Oyun zorluk seviyesi:** Oyunda 2x2, 4x4 ve 6x6 olmak üzere 3 farklı zorluk seviyesi vardır. Oyun başlatıldığında kartlar kapalı şekilde dağıtılır. Oyundaki kartların her birinden birer çift bulur. Buradaki amaç açılan kartın diğer çiftini bulabilmektir. Oyunda kartların sırası her seferinde rastgeledir.
+
+  | Oyuncu | Basit | Orta | Zor | 
+  | :---         |     :---:      |          ---: |         ---: |
+  | *Çoklu Oyuncu*   | <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/MultiBasit.png" height="200">   | <img   src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/MultiOrta.png" height="200">    | <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/MultiZor.png" height="200">    
+  | *Tek Kişilik*   |  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/TekKisilikBasit.png" height="200">         |  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/TekKisilikOrta.png" height="200">       |  <img src="https://github.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/blob/main/img/Aray%C3%BCz/TekKisilikZor.png" height="200">       |
+
 
 ### Müzikler
 
 Arka plan müziği: Oyun esnasında arka planda bir müzik çalınır. Bu müzik oyun oynanırken çalmaya devam eder ve 3 durumda bu müzik değişecektir. 
 
-1) Kartın eşi bulunduğunda farklı bir müzik ile uyarı verilir. 
+1. Kartın eşi bulunduğunda farklı bir müzik ile uyarı verilir. 
 
-2) Oyun süresi bittiği zaman arka fon müziği olumsuz bir uyarı verilir. 
+2. Oyun süresi bittiği zaman arka fon müziği olumsuz bir uyarı verilir. 
 
-3) Süre bitmeden bütün kartların eşi bulununca arka fon müziği kazandınız anlamında olumlu bir uyarı verir.
-
-Not: İstenilen durumda oyun müziğinin tamamen kapatılması için bir buton eklenmiştir.
+3. Süre bitmeden bütün kartların eşi bulununca arka fon müziği kazandınız anlamında olumlu bir uyarı verir.
 
 
 ## Kaynakça

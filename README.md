@@ -308,12 +308,20 @@ fun timer(){
 ```
 
 ## Projenin APK'sının Oluşturulması
+<br>
 
-Proje CTRL + F9 tuş kombinasyonunu kullanarak veya ekranda görünen yeşil çekiç simgesine basılarak build edilir.
+Proje CTRL + F9 tuş kombinasyonunu kullanarak veya ekranın üst kısmında görünen yeşil çekiç simgesine basılarak build edilir.
 
 Daha sonra üst kısımdaki araç çubuğundan aşağıdaki ekran görüntüsünde gözüktüğü üzere Build Bundle(s) / APK(s) seçeneği üzerine gelinerek Build APK(s) seçeneğine basılır.
 
+<br>
+<img src="https://raw.githubusercontent.com/zeynepaslierhan/KOU-AndroidApp-Yazlab3/main/img/build.png" height="300">
+
+<br>
+
 Oluşturulan APK dosyası default olarak \app\build\outputs\apk\debug dizinine kaydedilir.
+
+<br>
 
 ## Kaynakça
 1. [Kotlin İle Android Mobil Uygulama Geliştirme Eğitimi Temel Seviye , Atıl Samancıoğlu, *BTK Akademi*](https://www.btkakademi.gov.tr/portal/course/kotlin-ile-android-mobil-uygulama-gelistirme-egitimi-temel-seviye-10274)
